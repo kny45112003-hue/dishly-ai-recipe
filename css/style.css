@@ -1,3 +1,127 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+/* Design Token */
+:root {
+  /* Colors */
+  /* Primary */
+  --primary-lighten-bule-100: #e6f0ff;
+  --primary-lighten-bule-300: #b3d2ff;
+  --primary-lighten-bule-600: #80b4ff;
+  --primary-lighten-bule-900: #4d96ff;
+  --primary-darken-bule-200: #1a78ff;
+  --primary-darken-bule-400: #005ee6;
+  --primary-darken-bule-500: #0049b3;
+  --primary-darken-bule-600: #003480;
+  --primary-darken-bule-800: #00204d;
+  --primary-darken-bule-900: #000b1a;
+
+  /* Gray */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* Spacing */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-18: 18px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+
+  /* Font Size */
+  --font-size-xxs: 10px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 22px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 28px;
+  --font-size-5xl: 32px;
+  --font-size-6xl: 40px;
+
+  /* System Token */
+  /* background */
+  --color-background-primary: var(--gray-50);
+  --color-background-inverse: var(--gray-900);
+
+  /* Text */
+  --color-text-primary: var(--font);
+  --color-text-invers: var(--gray-50);
+
+  /* semantic */
+  --error: #ff4d4f;
+  --warning: #ffa940;
+  --warning-2: #ffc107;
+  --success: #52c41a;
+  --info: #1677ff;
+
+  /* accent */
+  --a-1: #ff511c;
+  --a-2: #6bcb77;
+  --font: #1f2a44;
+
+  /* Responsive */
+  --layout-padding-sm: 16px;
+  --layout-padding-md: 24px;
+
+  /* Container */
+  --container-max: 1280px;
+}
+
+/* Typography */
+.heading-1 {
+  font-size: var(--font-size-5xl);
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+}
+.heading-2 {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+}
+.heading-3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+}
+.menu {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  line-height: 1px;
+  letter-spacing: -0.02em;
+}
+.menu-seen {
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+}
+.caption {
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  line-height: 1px;
+  letter-spacing: -0.02em;
+}
+.caption-1 {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+}
+
 /*css 리셋*/
 * {
   margin: 0;
@@ -8,7 +132,26 @@ html {
 }
 body {
   overflow-x: hidden;
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Malgun Gothic",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
   font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--primary-darken-bule-900);
   color: #000;
   background-color: #fff;
 }
@@ -21,6 +164,244 @@ a {
   text-decoration: none;
 }
 img {
+  display: block;
   border: 0;
-  vertical-align: middle;
+}
+/* 썸네일 전용 */
+.thumbnail img,
+.card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 로고/아이콘 전용 */
+.logo img,
+.icon-btn img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+button {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0.5rem 1rem;
+
+  font: inherit;
+  color: inherit;
+
+  cursor: pointer;
+
+  /* 최소 터치 영역 확보 */
+  min-width: 44px;
+  min-height: 44px;
+}
+button:focus-visible {
+  outline: 2px solid var(--color-background-primary);
+  outline-offset: 2px;
+}
+
+/* 비활성 상태 */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* hover (마우스 사용자) */
+button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* active (클릭 시) */
+button:active {
+  transform: scale(0.97);
+}
+/* Component Token */
+/* Layout */
+.layout {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 16px;
+  flex: 1;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-12);
+}
+.thumbnail {
+  /* min-width: 130px;
+  min-height: 130px; */
+  aspect-ratio: 1/1;
+  /*border-radius: var(--spacing-10);*/
+  overflow: hidden;
+}
+.card-thumbnail {
+  overflow: hidden;
+  border-radius: var(--spacing-10);
+  aspect-ratio: 130/130;
+}
+
+/* Button */
+.btn {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background-color: var(--primary-darken-bule-800);
+  color: var(--color-text-invers);
+  padding: var(--spacing-16) var(--spacing-8);
+  border-radius: var(--spacing-12);
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+.card-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+/* 재료박스 기본스타일 */
+.ingredient-section {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2a44;
+}
+
+.ingredient-box-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ingredient-box {
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  background: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  transition: all 0.2s ease;
+}
+
+/* 기본 */
+.ingredient-box.is-default {
+  background: #f3f4f6;
+  border: none;
+}
+
+/* 🔥 hover (연한) */
+.ingredient-box:hover {
+  background: #e0f2fe;
+}
+
+/* 🔥 선택 (진한) */
+.ingredient-box.is-selected {
+  background: #67d5b5;
+  color: #ffffff;
+}
+
+/* 선택 상태에서 텍스트 색 */
+.ingredient-box.is-selected span {
+  color: #ffffff;
+}
+
+/* 메뉴비 */
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.bottom-nav-inner {
+  max-width: 430px;
+  height: 88px;
+  margin: 0 auto;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+}
+.bottom-nav-item {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.bottom-nav-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.bottom-nav-text {
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: inherit;
+}
+.bottom-nav-item.is-active .bottom-nav-text {
+  color: #4d96ff;
+}
+
+/* 모바일 콘텐츠 안 가려지게 */
+.home-main {
+  padding-bottom: 110px;
+}
+
+/* 태블릿 이상에서는 숨기기 */
+@media (min-width: 1024px) {
+  .bottom-nav {
+    display: none;
+  }
+
+  .home-main {
+    padding-bottom: 40px;
+  }
 }

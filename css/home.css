@@ -1,0 +1,535 @@
+/* 해더 */
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 60px;
+  padding: 0 16px;
+  background: #fff;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo img {
+  width: auto;
+  height: 28px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* 메인영역 */
+.home-main {
+  padding: 20px 16px 100px;
+}
+/* 현재상태 구역 */
+.status-section {
+  margin-top: 24px;
+}
+
+.section-title {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2a44;
+}
+
+.status-card {
+  display: flex;
+  gap: 12px;
+  padding: 16px 12px;
+  border-radius: 20px;
+  background: #eaf2ff;
+}
+
+.status-item {
+  flex: 1;
+  text-align: center;
+}
+
+.status-label {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.half-donut {
+  --progress: 50;
+  --fill: #4d96ff;
+  --rest: #bfd8ff;
+
+  position: relative;
+  width: 130px;
+  height: 65px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 130px 130px 0 0;
+  background: conic-gradient(
+    from 180deg,
+    var(--fill) calc(var(--progress) * 1%),
+    var(--rest) 0
+  );
+}
+
+.half-donut-inner {
+  position: absolute;
+  left: 50%;
+  bottom: -44px;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: #eaf2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.half-donut-inner span {
+  position: absolute;
+  top: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2a44;
+}
+
+.half-donut--current {
+  --fill: #4d96ff;
+  --rest: #cfe2ff;
+}
+
+.half-donut--remain {
+  --fill: #003f9e;
+  --rest: #cfe2ff;
+}
+/* 추천레시피 구역 */
+.home-recommend-section {
+  margin-top: 32px;
+}
+
+.section-title {
+  margin-bottom: 16px;
+  color: #1f2a44;
+}
+
+.status-label {
+  margin-bottom: 10px;
+  color: #4b5563;
+}
+
+.recommend-top-row {
+  display: flex;
+  gap: 19px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.recommend-top-row::-webkit-scrollbar {
+  display: none;
+}
+
+.recommend-chip {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+
+  min-width: 125px;
+  height: 34px;
+  padding: 12px 8px;
+
+  border: none;
+  border-radius: 16px;
+  background: transparent;
+  color: #1f2a44;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.recommend-chip .recipe-name,
+.recommend-chip .recipe-kcal {
+  color: #1f2a44;
+}
+
+/* hover 했을 때만 배경 등장 */
+.recommend-chip:hover {
+  background: #dbeafe;
+}
+
+/* 클릭해서 선택된 상태 */
+.recommend-chip.is-active {
+  background: #cfe2ff;
+}
+
+.recommend-chip:active {
+  transform: scale(0.97);
+}
+.recommend-chip .recipe-kcal {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.nutrition-preview-card {
+  overflow: hidden;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(31, 42, 68, 0.08);
+}
+
+.nutrition-preview-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.nutrition-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nutrition-preview-body {
+  padding: 16px;
+}
+
+.nutrition-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.nutrition-preview-meal {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f2a44;
+}
+
+.nutrition-preview-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.nutrition-preview-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nutrition-donut-wrap {
+  flex: 0 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nutrition-donut {
+  --carb: 57;
+  --protein: 21;
+  --fat: 22;
+  --sugar: 10;
+  --sodium: 8;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #4f83ff 0% calc(var(--carb) * 1%),
+    #22c55e calc(var(--carb) * 1%) calc((var(--carb) + var(--protein)) * 1%),
+    #f59e0b calc((var(--carb) + var(--protein)) * 1%)
+      calc((var(--carb) + var(--protein) + var(--fat)) * 1%),
+    #ef4444 calc((var(--carb) + var(--protein) + var(--fat)) * 1%)
+      calc((var(--carb) + var(--protein) + var(--fat) + var(--sugar)) * 1%),
+    #64748b
+      calc((var(--carb) + var(--protein) + var(--fat) + var(--sugar)) * 1%) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nutrition-donut-inner {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2a44;
+}
+
+.nutrition-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nutrition-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.nutrition-meta-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.nutrition-meta-dot.carb {
+  background: #4f83ff;
+}
+.nutrition-meta-dot.protein {
+  background: #22c55e;
+}
+.nutrition-meta-dot.fat {
+  background: #f59e0b;
+}
+.nutrition-meta-dot.sugar {
+  background: #ef4444;
+}
+.nutrition-meta-dot.sodium {
+  background: #64748b;
+}
+/* 유통기한 임백 */
+.expiry-section {
+  margin-top: 24px;
+}
+
+.expiry-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* 공통 */
+.expiry-chip {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: all 0.2s ease;
+}
+
+/*  위험 */
+.expiry-chip.danger {
+  background: #ffe5e5;
+  color: #e53935;
+}
+
+/*  일반 */
+.expiry-chip.normal {
+  background: #eef2f7;
+  color: #6b7280;
+}
+
+/* hover */
+.expiry-chip:hover {
+  transform: scale(1.05);
+}
+/* 취향 레시피 재료 */
+.similar-recipe-section {
+  margin-top: 32px;
+}
+
+.similar-recipe-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.similar-recipe-card {
+  padding: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  background: #f9fafb;
+}
+
+.similar-recipe-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.similar-recipe-thumb {
+  width: 84px;
+  height: 84px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.similar-recipe-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.similar-recipe-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.similar-recipe-name {
+  color: #1f2a44;
+}
+
+.similar-recipe-kcal {
+  color: #9ca3af;
+}
+
+/* 기본 (모바일) */
+.similar-recipe-ingredients {
+  display: grid;
+  grid-template-columns: repeat(3, 68px);
+  gap: 10px;
+}
+
+/* 태블릿 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .similar-recipe-ingredients {
+    grid-template-columns: repeat(4, 68px);
+  }
+}
+/* 모바일: 4번째 숨김 */
+.similar-recipe-ingredients > :nth-child(n + 4) {
+  display: none;
+}
+
+/* 태블릿: 다시 보이기 */
+@media (min-width: 768px) {
+  .similar-recipe-ingredients > :nth-child(n + 4) {
+    display: block;
+  }
+}
+.similar-recipe-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recipe-add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 1;
+  color: #4d96ff;
+  background: #f3f4f6;
+  border-radius: 12px;
+}
+
+.recipe-add-btn:hover {
+  background: #e6f0ff;
+}
+
+.recipe-add-btn:active {
+  transform: scale(0.97);
+}
+/* 푸터 */
+.site-footer {
+  margin-top: 48px;
+  padding: 32px 0 120px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.site-footer .container {
+  background: transparent;
+}
+
+.footer-logo {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2a44;
+}
+
+.footer-text {
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6b7280;
+}
+
+.footer-copy {
+  font-size: 12px;
+  line-height: 18px;
+  color: #9ca3af;
+}
+
+.tablet-inner {
+  width: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tablet-inner {
+    width: 392px;
+    margin: 0 auto;
+  }
+}

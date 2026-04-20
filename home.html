@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>홈 화면</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <script src="js/ingredient.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="mobile-header container">
+      <a href="#" class="logo">
+        <img src="assets/icon/log=icon.png" alt="Dishly 로고" />
+      </a>
+
+      <div class="header-actions">
+        <button class="icon-btn" type="button" aria-label="프로필">
+          <img src="assets/icon/human-icon.png" alt="프로필 로고" />
+        </button>
+
+        <button class="icon-btn" type="button" aria-label="메뉴">
+          <img src="assets/icon/menu.png" alt="메뉴 로고" />
+        </button>
+      </div>
+    </header>
+
+    <main class="home-main container">
+      <div class="tablet-inner">
+        <section class="status-section">
+          <h2 class="section-title heading-2">현재 상태</h2>
+
+          <div class="status-card">
+            <div class="status-item">
+              <p class="status-label caption">현재 섭취 칼로리</p>
+              <div class="half-donut half-donut--current" id="currentGraph">
+                <div class="half-donut-inner">
+                  <span id="currentCalorie" class="heading-3">300kcal</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="status-item">
+              <p class="status-label caption">남은 칼로리</p>
+              <div class="half-donut half-donut--remain" id="remainGraph">
+                <div class="half-donut-inner">
+                  <span id="remainCalorie" class="heading-3">1310kcal</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-recommend-section">
+          <h2 class="section-title heading-2">추천 레시피</h2>
+          <div class="recommend-top-row" id="recommendRecipeList"></div>
+          <div class="nutrition-preview-card" id="nutritionPreviewCard"></div>
+        </section>
+
+        <section class="expiry-section">
+          <h2 class="section-title">유통기한 임박</h2>
+
+          <div class="expiry-list">
+            <button class="expiry-chip danger">
+              우유 <span>14시간 남음</span>
+            </button>
+
+            <button class="expiry-chip danger">
+              양상추 <span>1일 남음</span>
+            </button>
+
+            <button class="expiry-chip normal">
+              오리엔탈 소스 <span>1일 남음</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="similar-recipe-section">
+          <h2 class="section-title heading-2">
+            취향이 비슷한 사람의 추천 레시피!
+          </h2>
+          <div class="similar-recipe-list" id="similarRecipeList"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p class="footer-logo">Dishly</p>
+        <p class="footer-text">나만의 식단을 더 쉽게 관리하는 레시피 서비스</p>
+        <p class="footer-copy">© 2026 Dishly. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <nav class="bottom-nav">
+      <div class="bottom-nav-inner">
+        <button
+          class="bottom-nav-item is-active"
+          type="button"
+          data-default="assets/icon/home-icon-nomal.png"
+          data-hover="assets/icon/home-icon-chose.png"
+          data-active="assets/icon/home-icon-chose.png"
+          aria-label="홈"
+        >
+          <img
+            src="assets/icon/home-icon-nomal.png"
+            alt=""
+            class="bottom-nav-icon"
+          />
+          <span class="bottom-nav-text">홈</span>
+        </button>
+
+        <button
+          class="bottom-nav-item"
+          type="button"
+          data-default="assets/icon/recipe-icon-nomal.png"
+          data-hover="assets/icon/recipe-icon-chose.png"
+          data-active="assets/icon/recipe-icon-chose.png"
+          aria-label="레시피"
+        >
+          <img
+            src="assets/icon/recipe-icon-nomal.png"
+            alt=""
+            class="bottom-nav-icon"
+          />
+          <span class="bottom-nav-text">레시피</span>
+        </button>
+
+        <button
+          class="bottom-nav-item"
+          type="button"
+          data-default="assets/icon/stuff-icon-nomal.png"
+          data-hover="assets/icon/stuff-icon-chose.png"
+          data-active="assets/icon/stuff-icon-chose.png"
+          aria-label="재료"
+        >
+          <img
+            src="assets/icon/stuff-icon-nomal.png"
+            alt=""
+            class="bottom-nav-icon"
+          />
+          <span class="bottom-nav-text">재료</span>
+        </button>
+
+        <button
+          class="bottom-nav-item"
+          type="button"
+          data-default="assets/icon/save-icon-nomal.png"
+          data-hover="assets/icon/save-icon-chose.png"
+          data-active="assets/icon/save-icon-chose.png"
+          aria-label="저장"
+        >
+          <img
+            src="assets/icon/save-icon-nomal.png"
+            alt=""
+            class="bottom-nav-icon"
+          />
+          <span class="bottom-nav-text">저장</span>
+        </button>
+
+        <button
+          class="bottom-nav-item"
+          type="button"
+          data-default="assets/icon/record-icon-nomal.png"
+          data-hover="assets/icon/record-icon-chose.png"
+          data-active="assets/icon/record-icon-chose.png"
+          aria-label="기록"
+        >
+          <img
+            src="assets/icon/record-icon-nomal.png"
+            alt=""
+            class="bottom-nav-icon"
+          />
+          <span class="bottom-nav-text">기록</span>
+        </button>
+      </div>
+    </nav>
+  </body>
+</html>
