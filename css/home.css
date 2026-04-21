@@ -454,10 +454,6 @@
   margin-bottom: 16px;
 }
 
-/* 4번째부터 숨김 (태블릿에서도 유지) */
-.similar-recipe-ingredients > :nth-child(n + 4) {
-  display: none;
-}
 .similar-recipe-action {
   display: flex;
   justify-content: flex-end;
