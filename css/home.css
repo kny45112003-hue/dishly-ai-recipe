@@ -385,7 +385,10 @@
 .expiry-chip:hover {
   transform: scale(1.05);
 }
-/* 취향 레시피 재료 */
+/* =========================
+   취향 레시피 카드
+========================= */
+
 .similar-recipe-section {
   margin-top: 32px;
 }
@@ -442,48 +445,45 @@
   color: #9ca3af;
 }
 
-/* 기본 (모바일) */
+/*  핵심: 3칸 고정 (모바일 + 태블릿 동일) */
 .similar-recipe-ingredients {
   display: grid;
   grid-template-columns: repeat(3, 68px);
-  gap: 10px;
+  gap: 12px;
+  justify-content: start;
+  margin-bottom: 16px;
 }
 
-/* 태블릿 */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .similar-recipe-ingredients {
-    grid-template-columns: repeat(4, 68px);
-  }
-}
-/* 모바일: 4번째 숨김 */
+/* 4번째부터 숨김 (태블릿에서도 유지) */
 .similar-recipe-ingredients > :nth-child(n + 4) {
   display: none;
-}
-
-/* 태블릿: 다시 보이기 */
-@media (min-width: 768px) {
-  .similar-recipe-ingredients > :nth-child(n + 4) {
-    display: block;
-  }
 }
 .similar-recipe-action {
   display: flex;
   justify-content: flex-end;
+  margin-top: 4px;
 }
-
+/* 버튼 크기 보정 */
 .recipe-add-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 44px;
-  padding: 0 12px;
-  font-size: 14px;
-  line-height: 1;
-  color: #4d96ff;
-  background: #f3f4f6;
-  border-radius: 12px;
-}
 
+  min-width: 130px;
+  height: 34px;
+  padding: 0 12px;
+
+  border: none;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #4d96ff;
+
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
 .recipe-add-btn:hover {
   background: #e6f0ff;
 }

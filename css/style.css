@@ -100,7 +100,7 @@
 .menu {
   font-size: var(--font-size-md);
   font-weight: 600;
-  line-height: 1px;
+  line-height: 26px;
   letter-spacing: -0.02em;
 }
 .menu-seen {
@@ -112,7 +112,7 @@
 .caption {
   font-size: var(--font-size-sm);
   font-weight: 400;
-  line-height: 1px;
+  line-height: 20px;
   letter-spacing: -0.02em;
 }
 .caption-1 {
