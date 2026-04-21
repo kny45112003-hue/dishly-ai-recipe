@@ -326,3 +326,68 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+/* =========================
+   데스크탑 추천 레시피 데이터
+========================= */
+const desktopSimilarRecipeData = [
+  {
+    id: "tofuRiceBowl",
+    name: "순두부 덮밥",
+    kcal: 350,
+    image: "assets/image/dububam.png",
+    ingredients: ["tofu", "green_onion", "onion", "pepperPowder"],
+  },
+  {
+    id: "cabbageRoll",
+    name: "양배추 롤",
+    kcal: 300,
+    image: "assets/image/roll.png",
+    ingredients: ["cabbage", "onion", "pork", "egg"],
+  },
+];
+
+/* =========================
+   데스크탑 추천 카드 생성
+========================= */
+function createDesktopSimilarCard(recipe) {
+  return `
+    <article class="desktop-similar-card">
+      <div class="desktop-similar-top">
+        <div class="desktop-similar-thumb">
+          <img src="${recipe.image}" alt="${recipe.name}">
+        </div>
+
+        <div class="desktop-similar-info">
+          <h4>${recipe.name}</h4>
+          <p>${recipe.kcal}kcal</p>
+        </div>
+      </div>
+
+      <div class="desktop-similar-ingredients">
+        ${recipe.ingredients.map(createReadonlyIngredientBox).join("")}
+      </div>
+
+      <div class="desktop-similar-action">
+        <button type="button" class="recipe-add-btn">+ 레시피 추가하기</button>
+      </div>
+    </article>
+  `;
+}
+
+/* =========================
+   데스크탑 추천 카드 렌더
+========================= */
+function renderDesktopSimilarRecipes() {
+  const target = document.getElementById("desktopSimilarRecipeList");
+  if (!target) return;
+
+  target.innerHTML = desktopSimilarRecipeData
+    .map(createDesktopSimilarCard)
+    .join("");
+}
+
+/* =========================
+   실행
+========================= */
+renderDesktopSimilarRecipes();

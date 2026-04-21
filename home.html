@@ -177,5 +177,161 @@
         </button>
       </div>
     </nav>
+    <div class="desktop-view">
+      <div class="desktop-center">
+        <div class="desktop-layout">
+          <!-- 왼쪽 사이드바 -->
+          <aside class="desktop-sidebar">
+            <a href="#" class="desktop-sidebar-logo">
+              <img src="assets/icon/log=icon.png" alt="Dishly 로고" />
+            </a>
+
+            <nav class="desktop-sidebar-menu">
+              <button class="desktop-menu-item is-active" type="button">
+                <img src="assets/icon/home-icon-nomal.png" alt="" />
+                <span>메인</span>
+              </button>
+
+              <button class="desktop-menu-item" type="button">
+                <img src="assets/icon/recipe-icon-nomal.png" alt="" />
+                <span>레시피 추천</span>
+              </button>
+
+              <button class="desktop-menu-item" type="button">
+                <img src="assets/icon/stuff-icon-nomal.png" alt="" />
+                <span>나의 냉장고</span>
+              </button>
+
+              <button class="desktop-menu-item" type="button">
+                <img src="assets/icon/save-icon-nomal.png" alt="" />
+                <span>레시피 기록</span>
+              </button>
+
+              <button class="desktop-menu-item" type="button">
+                <img src="assets/icon/record-icon-nomal.png" alt="" />
+                <span>식단 달력</span>
+              </button>
+
+              <button class="desktop-menu-item" type="button">
+                <img src="assets/icon/human-icon.png" alt="" />
+                <span>마이 페이지</span>
+              </button>
+            </nav>
+
+            <div class="desktop-sidebar-banner">
+              <img src="assets/image/Frame 122.png" alt="냉장고 이미지" />
+              <p>카메라로 재료를<br />간편하게 등록하세요!</p>
+              <button type="button" class="desktop-sidebar-banner-btn">
+                + 재료 추가하기
+              </button>
+            </div>
+          </aside>
+
+          <!-- 가운데 메인 -->
+          <main class="desktop-main">
+            <header class="desktop-topbar">
+              <div class="desktop-search-wrap">
+                <input
+                  type="text"
+                  class="desktop-search-input"
+                  placeholder="레시피 검색"
+                />
+                <button type="button" class="desktop-filter-btn">Filter</button>
+              </div>
+            </header>
+
+            <section class="desktop-hero-banner">
+              <div class="desktop-hero-text">
+                <h2>당신만의 레시피를 만들어 보세요!</h2>
+                <p>
+                  AI가 당신의 평소 식단과 섭취 칼로리를 계산하여 효율적인 식단을
+                  보여줍니다
+                </p>
+              </div>
+              <div class="desktop-hero-image">
+                <img src="assets/image/banner-woman.png" alt="배너 이미지" />
+              </div>
+            </section>
+
+            <section class="desktop-similar-section">
+              <div class="desktop-section-head">
+                <h3>취향이 비슷한 사람의 추천 레시피!</h3>
+                <button type="button" class="desktop-more-btn">더보기 +</button>
+              </div>
+
+              <div
+                class="desktop-similar-grid"
+                id="desktopSimilarRecipeList"
+              ></div>
+            </section>
+          </main>
+
+          <!-- 오른쪽 패널 -->
+          <aside class="desktop-right-panel">
+            <div class="desktop-profile-btn">
+              <button type="button" aria-label="프로필">
+                <img src="assets/icon/human-icon.png" alt="프로필" />
+              </button>
+            </div>
+
+            <section class="desktop-report-card">
+              <div class="desktop-report-head">
+                <h3>기록 <span>일주일간 기록</span></h3>
+                <p>From 2026. 3. 30</p>
+              </div>
+
+              <div class="desktop-report-chart">
+                <div class="desktop-report-donut">
+                  <span>7 Days</span>
+                </div>
+              </div>
+
+              <div class="desktop-report-meta">
+                <div>
+                  <span class="dot blue1"></span>칼로리
+                  <strong>6500 kcal</strong>
+                </div>
+                <div>
+                  <span class="dot blue2"></span>탄수화물 <strong>812 g</strong>
+                </div>
+                <div>
+                  <span class="dot blue3"></span>단백질 <strong>487 g</strong>
+                </div>
+                <div>
+                  <span class="dot blue4"></span>지방 <strong>144 g</strong>
+                </div>
+              </div>
+            </section>
+
+            <section class="desktop-created-recipe">
+              <h3>추천 생성 레시피</h3>
+
+              <div class="desktop-created-list">
+                <article class="desktop-created-card">
+                  <div class="desktop-created-thumb">
+                    <img src="assets/image/totia.png" alt="샐러드 랩" />
+                  </div>
+                  <h4>샐러드 랩</h4>
+                  <p>신선한 야채들을 또띠아와 함께</p>
+                  <span>15min</span>
+                </article>
+
+                <article class="desktop-created-card">
+                  <div class="desktop-created-thumb">
+                    <img
+                      src="assets/image/chicken-salad.png"
+                      alt="치킨 시저 샐러드"
+                    />
+                  </div>
+                  <h4>치킨 시저 샐러드</h4>
+                  <p>촉촉한 닭가슴살과 아삭한 샐러드 조합</p>
+                  <span>10min</span>
+                </article>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -446,6 +446,7 @@
 }
 
 /*  핵심: 3칸 고정 (모바일 + 태블릿 동일) */
+/* 모바일 */
 .similar-recipe-ingredients {
   display: grid;
   grid-template-columns: repeat(3, 68px);
@@ -454,6 +455,46 @@
   margin-bottom: 16px;
 }
 
+.similar-recipe-ingredients > :nth-child(n + 4) {
+  display: none;
+}
+
+/* 태블릿 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .similar-recipe-ingredients {
+    grid-template-columns: repeat(4, 60px);
+    gap: 8px;
+    justify-content: start;
+  }
+
+  .similar-recipe-ingredients > :nth-child(n + 4) {
+    display: block;
+  }
+
+  .similar-recipe-card .ingredient-box {
+    width: 60px;
+    height: 60px;
+    padding: 6px 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .similar-recipe-card .ingredient-box img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-bottom: 3px;
+  }
+
+  .similar-recipe-card .ingredient-box span {
+    font-size: 10px;
+    line-height: 1.1;
+    text-align: center;
+  }
+}
 .similar-recipe-action {
   display: flex;
   justify-content: flex-end;
@@ -528,4 +569,423 @@
     width: 392px;
     margin: 0 auto;
   }
+}
+/* =========================
+   DESKTOP 전환 (수정본)
+========================= */
+
+/* =========================
+   🔥 FINAL RESPONSIVE SYSTEM
+========================= */
+
+/* =========================
+   기본 = 데스크탑
+========================= */
+
+/* 데스크탑 보이기 */
+.desktop-view {
+  display: block;
+}
+
+/* 모바일/태블릿 숨기기 */
+.mobile-header,
+.home-main,
+.site-footer,
+.bottom-nav {
+  display: none;
+}
+
+/* =========================
+   모바일 & 태블릿
+========================= */
+
+@media (max-width: 1023px) {
+  /* 데스크탑 숨기기 */
+  .desktop-view {
+    display: none;
+  }
+
+  /* 모바일 다시 보이기 */
+  .mobile-header,
+  .home-main,
+  .site-footer,
+  .bottom-nav {
+    display: block;
+  }
+}
+.desktop-center {
+  max-width: 1200px; /* 🔥 전체 UI 크기 고정 */
+  margin: 0 auto; /* 가운데 정렬 */
+  width: 100%;
+}
+/* =========================
+     전체 레이아웃
+  ========================= */
+.desktop-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr 280px;
+  gap: 24px;
+
+  padding: 24px;
+}
+
+@media (min-width: 1024px) {
+  /* =========================
+     LEFT SIDEBAR
+  ========================= */
+  .desktop-sidebar {
+    width: 218px;
+    height: 770px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 16px 0 0;
+    border-radius: 24px;
+    background: #eef5ff;
+    overflow: hidden;
+  }
+
+  /* 로고 */
+  .desktop-sidebar-logo {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 20px;
+    margin-bottom: 28px;
+  }
+
+  .desktop-sidebar-logo img {
+    width: auto;
+    height: 24px;
+    max-width: 95px;
+    object-fit: contain;
+  }
+
+  /* 메뉴 전체 */
+  .desktop-sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 16px;
+  }
+
+  /* 메뉴 버튼 */
+  .desktop-menu-item {
+    width: 186px;
+    height: 40px;
+    min-width: 186px;
+    min-height: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 16px;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #1f2a44;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .desktop-menu-item img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* 기본 */
+  .desktop-menu-item {
+    background: #ffffff;
+    color: #1f2a44;
+  }
+
+  /* 호버 */
+  .desktop-menu-item:hover {
+    background: #f3f4f6;
+    color: #1f2a44;
+  }
+
+  /* 선택 */
+  .desktop-menu-item.is-active {
+    background: #4d96ff;
+    color: #ffffff;
+  }
+
+  /* 선택 상태 아이콘 밝기 */
+  .desktop-menu-item.is-active img {
+    filter: brightness(0) invert(1);
+  }
+
+  /* 배너 */
+  .desktop-sidebar-banner {
+    margin-top: auto;
+    width: 218px;
+    height: 196px;
+
+    padding: 16px 18px 14px;
+    border-radius: 24px 24px 0 0;
+    background: #4d96ff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .desktop-sidebar-banner img {
+    width: 132px;
+    height: auto;
+    margin: 0 auto 10px;
+    object-fit: contain;
+  }
+
+  .desktop-sidebar-banner p {
+    margin-bottom: 14px;
+    text-align: center;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .desktop-sidebar-banner-btn {
+    width: 170px;
+    height: 36px;
+    min-width: 170px;
+    min-height: 36px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 36px;
+    border-radius: 25px;
+
+    background: #ffffff;
+    color: #4d96ff;
+    border: none;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  /* 배너 버튼 호버/선택 */
+  .desktop-sidebar-banner-btn:hover,
+  .desktop-sidebar-banner-btn.is-active {
+    background: #dbeafe;
+    color: #1f2a44;
+  }
+
+  .desktop-sidebar-banner-btn:active {
+    transform: scale(0.98);
+  }
+}
+/* =========================
+     CENTER MAIN
+  ========================= */
+.desktop-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.desktop-search-input {
+  width: 100%;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 0 16px;
+}
+
+.desktop-hero-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4d96ff;
+  color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.desktop-hero-image img {
+  width: 160px;
+}
+@media (min-width: 1024px) {
+  .desktop-similar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 180px);
+    gap: 16px;
+  }
+
+  .desktop-similar-card {
+    width: 180px;
+    height: 325px;
+    padding: 16px 14px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .desktop-similar-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .desktop-similar-thumb {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f9fafb;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .desktop-similar-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .desktop-similar-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .desktop-similar-info h4 {
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 700;
+    color: #1f2a44;
+    word-break: keep-all;
+  }
+
+  .desktop-similar-info p {
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #9ca3af;
+  }
+
+  /* 재료 박스 2x2 */
+  .desktop-similar-ingredients {
+    display: grid;
+    grid-template-columns: repeat(2, 68px);
+    grid-auto-rows: 68px;
+    gap: 12px;
+    justify-content: start;
+    margin-bottom: auto;
+  }
+
+  /* 버튼 영역 */
+  .desktop-similar-action {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* 버튼 기본 상태 */
+  .desktop-similar-card .recipe-add-btn {
+    width: 170px;
+    height: 36px;
+    min-width: 170px;
+    padding: 8px 36px;
+    border-radius: 25px;
+    background: #ffffff;
+    color: #4d96ff;
+    border: 1px solid #dbeafe;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    box-shadow: none;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  /* hover / selected 상태 */
+  .desktop-similar-card .recipe-add-btn:hover,
+  .desktop-similar-card .recipe-add-btn.is-active {
+    background: #4d96ff;
+    color: #ffffff;
+    border-color: #4d96ff;
+  }
+
+  .desktop-similar-card .recipe-add-btn:active {
+    transform: scale(0.98);
+  }
+}
+
+/* =========================
+     RIGHT PANEL
+  ========================= */
+.desktop-right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.desktop-report-card,
+.desktop-created-recipe {
+  background: #fff;
+  border-radius: 20px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.desktop-report-donut {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: conic-gradient(
+    #4f83ff 0 40%,
+    #6ea8ff 40% 70%,
+    #9ecbff 70% 85%,
+    #003f9e 85% 100%
+  );
+  position: relative;
+}
+
+.desktop-report-donut::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  left: 30px;
 }
