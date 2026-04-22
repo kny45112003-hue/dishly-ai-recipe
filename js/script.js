@@ -327,6 +327,45 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// 데스크탑 메뉴바
+document.addEventListener("DOMContentLoaded", function () {
+  const desktopMenuItems = document.querySelectorAll(".desktop-menu-item");
+
+  desktopMenuItems.forEach((item) => {
+    const img = item.querySelector(".desktop-menu-icon");
+    if (!img) return;
+
+    const defaultSrc = item.dataset.default;
+    const hoverSrc = item.dataset.hover;
+    const activeSrc = item.dataset.active;
+
+    item.addEventListener("mouseenter", () => {
+      if (!item.classList.contains("is-active")) {
+        img.src = hoverSrc;
+      }
+    });
+
+    item.addEventListener("mouseleave", () => {
+      if (!item.classList.contains("is-active")) {
+        img.src = defaultSrc;
+      }
+    });
+
+    item.addEventListener("click", () => {
+      desktopMenuItems.forEach((menu) => {
+        menu.classList.remove("is-active");
+        const menuImg = menu.querySelector(".desktop-menu-icon");
+        if (menuImg) {
+          menuImg.src = menu.dataset.default;
+        }
+      });
+
+      item.classList.add("is-active");
+      img.src = activeSrc;
+    });
+  });
+});
+
 /* =========================
    데스크탑 추천 레시피 데이터
 ========================= */

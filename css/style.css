@@ -185,36 +185,33 @@ button {
   appearance: none;
   border: none;
   background: none;
-  padding: 0.5rem 1rem;
-
+  padding: 0;
   font: inherit;
   color: inherit;
-
   cursor: pointer;
-
-  /* 최소 터치 영역 확보 */
-  min-width: 44px;
-  min-height: 44px;
 }
+
 button:focus-visible {
   outline: 2px solid var(--color-background-primary);
   outline-offset: 2px;
 }
 
-/* 비활성 상태 */
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-/* hover (마우스 사용자) */
 button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: transparent;
 }
 
-/* active (클릭 시) */
 button:active {
   transform: scale(0.97);
+}
+
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
 }
 /* Component Token */
 /* Layout */
