@@ -1,0 +1,218 @@
+/* =========================
+   FIXED FRAME
+========================= */
+
+.page-shell {
+  min-height: 100vh;
+  background: var(--gray-50);
+}
+
+.page-frame {
+  width: 320px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .page-frame {
+    width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-frame {
+    width: 1024px;
+  }
+}
+
+/* =========================
+   START PAGE
+========================= */
+
+.start-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 버튼 공통구역 */
+.start-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.start-btn:active {
+  transform: scale(0.96);
+}
+
+.start-btn-primary {
+  background: var(--primary-darken-bule-500);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.start-btn-primary:hover {
+  background: var(--gray-200);
+  color: var(--font);
+}
+
+.start-btn-primary:active {
+  background: var(--primary-darken-bule-800);
+  color: #ffffff;
+}
+
+.start-btn-secondary {
+  background: var(--gray-100);
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.start-btn-secondary:hover {
+  background: var(--gray-200);
+  color: var(--font);
+}
+
+.start-btn-secondary:active {
+  background: var(--primary-darken-bule-600);
+  color: #ffffff;
+}
+
+/* 모바일 기준 */
+.start-logo-wrap {
+  margin-bottom: 24px;
+}
+
+.start-logo {
+  width: 100px;
+  height: 128px;
+  object-fit: contain;
+}
+
+.start-copy {
+  margin-bottom: 20px;
+}
+
+.start-title {
+  color: var(--font);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+}
+
+.start-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.start-btn-primary,
+.start-btn-secondary {
+  width: 140px;
+  height: 28px;
+  font-size: var(--font-size-xxs);
+}
+/* =========================
+   TABLET
+========================= */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .start-content {
+    justify-content: center;
+  }
+
+  .start-logo-wrap {
+    margin-bottom: 28px;
+  }
+
+  .start-logo {
+    width: 162px;
+    height: 206px;
+  }
+
+  .start-copy {
+    margin-bottom: 24px;
+  }
+
+  .start-title {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .start-actions {
+    gap: var(--spacing-8);
+  }
+
+  .start-btn-primary,
+  .start-btn-secondary {
+    width: 180px;
+    height: 32px;
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+@media (min-width: 1024px) {
+  .start-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .start-content {
+    justify-content: center;
+  }
+
+  .start-logo-wrap {
+    margin-bottom: 32px;
+  }
+
+  .start-logo {
+    width: 200px;
+    height: 254px;
+  }
+
+  .start-copy {
+    margin-bottom: 28px;
+  }
+
+  .start-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+  }
+
+  .start-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-12);
+  }
+
+  .start-btn-primary,
+  .start-btn-secondary {
+    width: 180px;
+    height: 32px;
+    font-size: var(--font-size-xs);
+  }
+}

@@ -808,7 +808,7 @@
   .desktop-main {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-20);
+    gap: 0;
     min-width: 0;
   }
 
@@ -816,6 +816,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 38px;
   }
 
   .desktop-search-wrap {
@@ -855,7 +856,7 @@
     display: flex;
     align-items: center;
     min-height: 150px;
-    padding: 26px 220px 26px var(--spacing-24);
+    padding: 26px 110px 26px var(--spacing-24);
     border-radius: 22px;
     background: linear-gradient(
       90deg,
@@ -864,6 +865,7 @@
     );
     color: #ffffff;
     overflow: visible;
+    margin-bottom: 64px;
   }
 
   .desktop-hero-text {
@@ -892,7 +894,7 @@
 
   .desktop-hero-image {
     position: absolute;
-    right: var(--spacing-12);
+    right: -17px;
     bottom: 0;
     width: 180px;
     height: 170px;
@@ -1267,6 +1269,26 @@
     font-weight: 600;
     color: var(--primary-lighten-bule-900);
   }
+}
+.desktop-footer {
+  margin-top: 80px; /* 위 콘텐츠랑 간격 */
+  padding-top: 24px;
+  padding-bottom: 40px;
+
+  border-top: 1px solid var(--gray-200);
+
+  text-align: center;
+}
+
+.desktop-footer .footer-text {
+  font-size: var(--font-size-sm);
+  color: var(--gray-500);
+  margin-bottom: 6px;
+}
+
+.desktop-footer .footer-copy {
+  font-size: var(--font-size-xs);
+  color: var(--gray-400);
 }
 /* =========================
    MOBILE FIXED 320

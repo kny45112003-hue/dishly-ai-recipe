@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 페이지</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/membership.css" />
+
+    <script src="../js/membership.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <main class="page-frame signup-page">
+        <section class="login-layout">
+          <div class="login-visual">
+            <div class="login-visual-inner">
+              <h1 class="login-visual-title">나만의 식단을 시작하세요</h1>
+              <p class="login-visual-desc">AI가 맞춤 식단을 추천해드립니다</p>
+              <div class="login-visual-image">
+                <img src="../assets/image/fepa.png" alt="식단 이미지" />
+              </div>
+            </div>
+          </div>
+
+          <section class="login-content">
+            <div class="login-logo-wrap">
+              <img
+                src="../assets/icon/main-icon.png"
+                class="login-logo-img"
+                alt="로고"
+              />
+            </div>
+
+            <div class="login-copy">
+              <h2 class="login-title">회원 가입</h2>
+            </div>
+
+            <form class="login-form">
+              <div class="login-input-group">
+                <label class="input-label">닉네임</label>
+                <input
+                  type="text"
+                  class="login-input"
+                  placeholder="홍길동"
+                  name="nickname"
+                />
+              </div>
+
+              <div class="login-input-group">
+                <label class="input-label">아이디/이메일</label>
+                <input
+                  type="email"
+                  class="login-input"
+                  placeholder="hohgg1234@gmail.com"
+                  name="email"
+                />
+              </div>
+
+              <div class="login-input-group">
+                <label class="input-label">비밀번호</label>
+                <input
+                  type="password"
+                  class="login-input"
+                  placeholder="**********"
+                  name="password"
+                />
+              </div>
+
+              <div class="login-input-group">
+                <label class="input-label">비밀번호 다시 입력</label>
+                <input
+                  type="password"
+                  class="login-input"
+                  placeholder="**********"
+                  name="password-confirm"
+                />
+              </div>
+
+              <button type="submit" class="login-btn signup-submit-btn">
+                완료
+              </button>
+            </form>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
