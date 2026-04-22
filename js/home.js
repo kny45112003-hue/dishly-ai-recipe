@@ -37,7 +37,7 @@ const recipeDB = {
     name: "샐러드랩",
     kcal: 350,
     meal: "저녁",
-    image: "assets/image/totia.png",
+    image: "../assets/image/totia.png",
     nutrition: {
       carb: 57,
       protein: 21,
@@ -56,7 +56,7 @@ const recipeDB = {
     name: "샐러드 파스타",
     kcal: 480,
     meal: "저녁",
-    image: "assets/image/pasta2.png",
+    image: "../assets/image/pasta2.png",
     nutrition: {
       carb: 52,
       protein: 18,
@@ -228,14 +228,14 @@ const similarRecipeDB = [
     id: "cabbageRoll",
     name: "양배추 롤",
     kcal: 300,
-    image: "assets/image/roll.png",
+    image: "../assets/image/roll.png",
     ingredients: ["cabbage", "onion", "pork", "egg"],
   },
   {
     id: "tofuRiceBowl",
     name: "순두부 덮밥",
     kcal: 350,
-    image: "assets/image/dububam.png",
+    image: "../assets/image/dububam.png",
     ingredients: ["tofu", "green_onion", "onion", "pepperPowder"],
   },
 ];
@@ -374,14 +374,14 @@ const desktopSimilarRecipeData = [
     id: "tofuRiceBowl",
     name: "순두부 덮밥",
     kcal: 350,
-    image: "assets/image/dububam.png",
+    image: "../assets/image/dububam.png",
     ingredients: ["tofu", "green_onion", "onion", "pepperPowder"],
   },
   {
     id: "cabbageRoll",
     name: "양배추 롤",
     kcal: 300,
-    image: "assets/image/roll.png",
+    image: "../assets/image/roll.png",
     ingredients: ["cabbage", "onion", "pork", "egg"],
   },
 ];

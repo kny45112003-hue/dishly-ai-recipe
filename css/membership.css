@@ -1,0 +1,63 @@
+/* =========================
+   INPUTS & LABELS (수정 버전)
+========================= */
+
+.login-input-group {
+  width: 100%;
+  margin-bottom: 24px; /* 라벨이 커진 만큼 그룹 간격을 조금 더 확보 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 입력창 상단 라벨 (4px 키운 16px) */
+.input-label {
+  display: block;
+  font-size: var(--font-size-md); /* 16px */
+  font-weight: 600;
+  color: var(--font); /* 조금 더 선명하게 */
+  margin-bottom: 10px;
+  margin-left: 2px;
+}
+
+/* 입력 박스 (라운드 10px로 수정) */
+.login-input {
+  width: 100%;
+  height: 52px; /* 도톰한 높이 유지 */
+  padding: 0 16px;
+
+  /* 🔥 요청하신 핵심 수정: 라운드 10px */
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+
+  background-color: #ffffff; /* 시안처럼 깔끔한 흰색 배경 */
+  font-size: var(--font-size-md);
+  color: var(--font);
+  transition: all 0.2s ease;
+}
+
+/* 포커스 되었을 때 테두리 색상 살짝 강조 */
+.login-input:focus {
+  outline: none;
+  border-color: var(--primary-lighten-bule-900);
+  box-shadow: 0 0 0 1px var(--primary-lighten-bule-900);
+}
+
+/* =========================
+   SUBMIT BUTTON (버튼도 맞춤 수정)
+========================= */
+.signup-submit-btn {
+  width: 120px; /* 시안처럼 작게 */
+  height: 44px;
+  align-self: flex-end; /* 오른쪽 정렬 */
+
+  /* 버튼도 입력창과 통일감을 주려면 10px, 
+     더 둥근 게 좋으시면 999px 유지하셔도 됩니다. 
+     일단 10px로 맞춰둘게요! */
+  border-radius: 10px;
+
+  background-color: var(--primary-darken-bule-800);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
