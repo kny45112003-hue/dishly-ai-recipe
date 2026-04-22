@@ -629,10 +629,10 @@
   padding: 24px;
 }
 
-@media (min-width: 1024px) {
-  /* =========================
+/* =========================
      LEFT SIDEBAR
   ========================= */
+@media (min-width: 1024px) {
   .desktop-sidebar {
     width: 218px;
     height: 770px;
