@@ -1,0 +1,221 @@
+/* =========================
+   1. 브라우저 전체
+========================= */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: sans-serif;
+}
+
+/* =========================
+   2. 기본 프레임
+========================= */
+.page-frame {
+  width: 320px;
+  height: 640px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0 auto;
+  transform: translateY(100px);
+}
+
+/* =========================
+   3. 전체 공통 레이아웃
+========================= */
+.onboarding-wrapper {
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  padding-top: 120px;
+}
+
+/* 제목 공통 */
+.onboarding-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 페이지별 메인 콘텐츠 */
+.onboarding-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 이미지 + 텍스트 */
+.onboarding-text-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 이미지 */
+.onboarding-image {
+  width: 72px;
+  margin-bottom: 20px;
+}
+
+/* 제목 */
+.onboarding-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* 설명 */
+.onboarding-desc {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* =========================
+   4. 하단 공통 영역
+========================= */
+.bottom-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+/* 진행바 */
+.onboarding-bar-container {
+  align-self: flex-start;
+  width: 250px;
+  height: 4px;
+  background: #d9d9d9;
+  border-radius: 999px;
+}
+
+.onboarding-bar-fill {
+  width: 25%;
+  height: 100%;
+  background: #2563eb;
+  border-radius: 999px;
+}
+
+/* Next 버튼 */
+.onboarding-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* =========================
+   5. 태블릿
+========================= */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .page-frame {
+    width: 678px;
+    height: 678px;
+  }
+
+  .onboarding-wrapper {
+    padding-top: 140px;
+    gap: 100px;
+  }
+
+  .onboarding-image {
+    width: 100px;
+  }
+
+  .onboarding-title {
+    font-size: 28px;
+  }
+
+  .onboarding-desc {
+    font-size: 14px;
+  }
+
+  .onboarding-bar-container {
+    width: 350px;
+  }
+
+  .onboarding-actions {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   6. 데스크탑
+========================= */
+@media (min-width: 1024px) {
+  .page-frame {
+    width: 1024px;
+    height: 600px;
+    position: relative;
+  }
+
+  .onboarding-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: block;
+    position: relative;
+  }
+
+  /* 로고 + 텍스트 */
+  .onboarding-content {
+    position: absolute;
+    left: 80px;
+    top: 140px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .onboarding-text-side {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .onboarding-image {
+    width: 140px;
+    margin-bottom: 24px;
+  }
+
+  .onboarding-title {
+    font-size: 32px;
+  }
+
+  .onboarding-desc {
+    font-size: 18px;
+  }
+
+  /* 하단 영역 */
+  .bottom-area {
+    position: absolute;
+    left: 80px;
+    right: 80px;
+    bottom: 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .onboarding-bar-container {
+    width: 420px;
+  }
+
+  .onboarding-actions {
+    font-size: 24px;
+    transform: translateY(28px);
+    margin-right: 100px;
+  }
+}
