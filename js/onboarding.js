@@ -14,7 +14,7 @@ function selectOption(element) {
 const startBtn = document.querySelector(".start-service-btn");
 if (startBtn) {
   startBtn.addEventListener("click", () => {
-    location.href = "home.html";
+    location.href = "index.html";
   });
 }
 
