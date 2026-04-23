@@ -430,3 +430,10 @@ function renderDesktopSimilarRecipes() {
    실행
 ========================= */
 renderDesktopSimilarRecipes();
+
+//  프로필 버튼
+document
+  .querySelector(".desktop-profile-btn button")
+  .addEventListener("click", () => {
+    location.href = "start.html";
+  });
