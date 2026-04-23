@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 게스트 버튼
   if (guestBtn) {
     guestBtn.addEventListener("click", () => {
-      location.href = "home.html";
+      location.href = "index.html";
     });
   }
 });
