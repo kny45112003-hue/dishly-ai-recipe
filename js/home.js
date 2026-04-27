@@ -435,5 +435,5 @@ renderDesktopSimilarRecipes();
 document
   .querySelector(".desktop-profile-btn button")
   .addEventListener("click", () => {
-    location.href = "start.html";
+    location.href = "../html/start.html";
   });
