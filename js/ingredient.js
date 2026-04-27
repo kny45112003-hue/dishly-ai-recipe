@@ -5,7 +5,7 @@ const ingredientDB = {
   lettuce: {
     id: "lettuce",
     name: "양상추",
-    image: "../assets/icon/lettuce-icon.png",
+    image: "assets/icon/lettuce-icon.png",
     category: "vegetable",
     kcal: 15,
     expireDays: 7,
@@ -14,7 +14,7 @@ const ingredientDB = {
   cabbage: {
     id: "cabbage",
     name: "양배추",
-    image: "../assets/icon/cabbage-icon.png",
+    image: "assets/icon/cabbage-icon.png",
     category: "vegetable",
     kcal: 10,
     expireDays: 7,
@@ -23,7 +23,7 @@ const ingredientDB = {
   onion: {
     id: "onion",
     name: "양파",
-    image: "../assets/icon/onion-icon.png",
+    image: "assets/icon/onion-icon.png",
     category: "vegetable",
     kcal: 40,
     expireDays: 10,
@@ -32,7 +32,7 @@ const ingredientDB = {
   green_onion: {
     id: "green_onion",
     name: "파",
-    image: "../assets/icon/pa-icon.png",
+    image: "assets/icon/pa-icon.png",
     category: "vegetable",
     kcal: 33,
     expireDays: 14,
@@ -41,7 +41,7 @@ const ingredientDB = {
   pork: {
     id: "pork",
     name: "돼지고기",
-    image: "../assets/icon/pork-icon.png",
+    image: "assets/icon/pork-icon.png",
     category: "meat",
     kcal: 242,
     expireDays: 3,
@@ -50,7 +50,7 @@ const ingredientDB = {
   tofu: {
     id: "tofu",
     name: "두부",
-    image: "../assets/icon/dupu-icon.png",
+    image: "assets/icon/dupu-icon.png",
     category: "protein",
     kcal: 47,
     expireDays: 14,
@@ -59,7 +59,7 @@ const ingredientDB = {
   egg: {
     id: "egg",
     name: "계란",
-    image: "../assets/icon/egg-icon.png",
+    image: "assets/icon/egg-icon.png",
     category: "protein",
     kcal: 155,
     expireDays: 10,
@@ -68,7 +68,7 @@ const ingredientDB = {
   pepperPowder: {
     id: "pepperPowder",
     name: "고추가루",
-    image: "../assets/icon/pepper_powder-icon.png",
+    image: "assets/icon/pepper_powder-icon.png",
     category: "seasoning",
     kcal: 282,
     expireDays: 180,
@@ -77,7 +77,7 @@ const ingredientDB = {
   tomato: {
     id: "tomato",
     name: "토마토",
-    image: "../assets/icon/tomato-icon.png",
+    image: "assets/icon/tomato-icon.png",
     category: "vegetable",
     kcal: 18,
     expireDays: 5,
@@ -86,7 +86,7 @@ const ingredientDB = {
   chickenBreast: {
     id: "chickenBreast",
     name: "닭가슴살",
-    image: "../assets/icon/chicken_breast-icon.png",
+    image: "assets/icon/chicken_breast-icon.png",
     category: "meat",
     kcal: 165,
     expireDays: 2,
@@ -95,7 +95,7 @@ const ingredientDB = {
   tortilla: {
     id: "tortilla",
     name: "또띠아",
-    image: "../assets/icon/tortilla-icon.png",
+    image: "assets/icon/tortilla-icon.png",
     category: "carb",
     kcal: 218,
     expireDays: 20,
@@ -104,7 +104,7 @@ const ingredientDB = {
   paprika: {
     id: "paprika",
     name: "파프리카",
-    image: "../assets/icon/paprika-icon.png",
+    image: "assets/icon/paprika-icon.png",
     category: "vegetable",
     kcal: 31,
     expireDays: 7,
