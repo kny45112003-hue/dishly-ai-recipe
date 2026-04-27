@@ -3,7 +3,7 @@
 ========================= */
 .onboarding-step1 {
   width: 100%;
-  height: 100%;
+  height: 80%;
   position: relative;
 }
 
@@ -13,7 +13,6 @@
 }
 
 .step-label {
-  font-size: 12px;
   margin-bottom: 12px;
 }
 
@@ -26,7 +25,7 @@
 .onboarding-desc {
   font-size: 12px;
   color: #666;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 /* 카드 영역 */
@@ -68,19 +67,19 @@
 
 .step1-bottom {
   position: absolute;
-  left: 80px;
-  right: 80px;
+  left: 40px;
+  right: 40px;
   bottom: 40px;
 
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
   align-items: flex-end;
 }
 
 /* 태블릿 */
 @media (min-width: 768px) and (max-width: 1023px) {
   .step1-header {
-    padding: 120px 90px 0;
+    padding: 120px 200px 0;
   }
 
   .goal-grid {
@@ -93,11 +92,13 @@
     width: 110px;
     height: 110px;
   }
-
+  .onboarding-bar-container {
+    width: 350px;
+  }
   .step1-bottom {
-    left: 90px;
-    right: 90px;
-    bottom: 60px;
+    left: 216px;
+    right: 216px;
+    bottom: 216px;
   }
 }
 
@@ -112,11 +113,12 @@
   }
 
   .onboarding-title {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .onboarding-desc {
-    font-size: 14px;
+    font-size: 18px;
+    margin-top: 12px;
   }
 
   .goal-grid {
@@ -141,9 +143,42 @@
     font-size: 14px;
   }
 
+  /* --- 하단 영역 수정 구간 --- */
   .step1-bottom {
-    left: 70px;
-    right: 80px;
-    bottom: 60px;
+    position: absolute;
+    left: 80px;
+    right: 56px;
+    bottom: 116px;
+
+    display: flex;
+    /* 🔥 1. 바와 버튼 뭉치 자체의 좌우 위치만 바꿉니다 */
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .onboarding-bar-container {
+    width: 420px;
+    height: 4px;
+    /* 숫자는 그대로 유지 */
+  }
+
+  .onboarding-actions {
+    display: flex;
+    /* 🔥 2. 화살표 순서는 그대로 (Next가 앞, 화살표가 뒤) */
+    flex-direction: row;
+    align-items: center;
+    gap: 8px; /* 기존 간격 유지 */
+    font-size: 24px;
+    font-weight: 400;
+
+    transform: translateY(-22px);
+  }
+
+  /* 🔥 3. 화살표 크기만 시원하게 키움 */
+  .next-icon {
+    width: 48px;
+    height: auto;
+    object-fit: contain;
   }
 }

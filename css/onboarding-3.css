@@ -1,0 +1,130 @@
+/* onboarding-1.css의 공통 레이아웃을 유지한 상태에서 추가 */
+
+.onboarding-step3 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* --- 재료 표시창 스타일 --- */
+.ingredient-display {
+  width: 100%;
+  height: 200px;
+  background: #f3f4f6;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* --- 등록 버튼 스타일 (둥근 버튼) --- */
+.registration-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-scan,
+.btn-input {
+  width: 100%;
+  max-width: 280px;
+  padding: 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid #2563eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 기본 상태 */
+.btn-scan {
+  width: 100%;
+  max-width: 280px;
+  padding: 14px;
+  border-radius: 999px;
+  border: 1.5px solid #2563eb;
+  background: #ffffff;
+  color: #2563eb;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 🔥 호버 상태 (이미지의 두 번째 버튼 느낌) */
+.btn-scan:hover {
+  background: #f0f7ff; /* 연한 파란색 배경 */
+}
+
+/* 🔥 클릭/선택 상태 (이미지의 세 번째 버튼 느낌) */
+.btn-scan.active {
+  background: #2563eb !important; /* 진한 파란색 배경 */
+  color: #ffffff !important; /* 흰색 글자 */
+}
+
+/* 클릭 시 아이콘 색상도 반전시키고 싶을 때 */
+.btn-scan.active .btn-icon {
+  filter: brightness(0) invert(1);
+}
+.btn-input {
+  background: #ffffff;
+  color: #2563eb;
+  /* 시안에 따라 다이어트 식단 버튼처럼 얇은 보더를 쓰려면 두께 조절 */
+}
+.btn-icon {
+  width: 24px; /* 시안에 맞게 조절 */
+  height: auto;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .step2-header {
+    padding: 120px 200px 0;
+  }
+  .step1-bottom {
+    position: absolute;
+    left: 200px;
+    right: 232px;
+    bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 40px;
+  }
+
+  .onboarding-bar-container {
+    width: 350px;
+  }
+}
+/* --- 데스크탑 배치 (onboarding-1 로직 유지) --- */
+@media (min-width: 1024px) {
+  .step3-header {
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+
+  .registration-container {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px; /* 재료 박스 너비 */
+  }
+
+  .ingredient-display {
+    height: 240px;
+  }
+}

@@ -7,8 +7,53 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/onboarding.css" />
+    <link rel="stylesheet" href="css/onboarding-3.css" />
 
     <script src="js/onboarding.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <main class="page-frame">
+      <section class="onboarding-step3">
+        <div class="step3-header">
+          <p class="step-label heading-3">재료 등록</p>
+          <h1 class="onboarding-title">지금 있는 재료를 알려주세요</h1>
+          <p class="onboarding-desc">
+            남은 재료와 목표에 맞춰 레시피를 추천해드려요
+          </p>
+        </div>
+
+        <div class="registration-container">
+          <div class="ingredient-display">
+            <p>여기에 재료가 표시 됩니다</p>
+          </div>
+
+          <div class="registration-buttons">
+            <button class="btn-scan" id="scanBtn">
+              <img
+                src="assets/icon/camra-icon.png"
+                id="cameraIcon"
+                class="btn-icon"
+                alt="camera"
+              />
+              <span>재료 스캔하기</span>
+            </button>
+            <button class="btn-input">재료 입력하기</button>
+          </div>
+        </div>
+
+        <div class="step1-bottom">
+          <div class="onboarding-bar-container">
+            <div class="onboarding-bar-fill" style="width: 100%"></div>
+          </div>
+          <div
+            class="onboarding-actions"
+            onclick="location.href = 'onboarding4.html'"
+          >
+            <span>Next</span>
+            <img src="assets/icon/range.png" alt="next" class="next-icon" />
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

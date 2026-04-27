@@ -7,8 +7,90 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/onboarding.css" />
+    <link rel="stylesheet" href="css/onboarding-2.css" />
 
     <script src="js/onboarding.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <main class="page-frame">
+      <section class="onboarding-step2">
+        <div class="step2-header">
+          <p class="step-label heading-3">음식 취향</p>
+          <h1 class="onboarding-title">
+            선호하는 음식을 선택해<br />
+            주세요
+          </h1>
+          <p class="onboarding-desc">
+            남은 재료와 목표에 맞춰 레시피를 추천해드려요
+          </p>
+        </div>
+
+        <section class="chip-container">
+          <div class="chip-group">
+            <p class="chip-category">단백질</p>
+            <div class="chips">
+              <button class="chip">소고기</button>
+              <button class="chip">닭고기</button>
+              <button class="chip">돼지고기</button>
+              <button class="chip">닭가슴살</button>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <p class="chip-category">식단 스타일</p>
+            <div class="chips">
+              <button class="chip">한식</button>
+              <button class="chip">양식</button>
+              <button class="chip">일식</button>
+              <button class="chip">중식</button>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <p class="chip-category">탄수화물</p>
+            <div class="chips">
+              <button class="chip">또띠아</button>
+              <button class="chip">라이스</button>
+              <button class="chip">브레드</button>
+              <button class="chip">곤약</button>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <p class="chip-category">과일</p>
+            <div class="chips">
+              <button class="chip">시트러스류</button>
+              <button class="chip">포도류</button>
+              <button class="chip">베리류</button>
+              <button class="chip">사과류</button>
+              <button class="chip">멜론류</button>
+            </div>
+          </div>
+
+          <div class="chip-group">
+            <p class="chip-category">식사</p>
+            <div class="chips">
+              <button class="chip">밥류</button>
+              <button class="chip">빵류</button>
+              <button class="chip">면류</button>
+              <button class="chip">탕류</button>
+            </div>
+          </div>
+        </section>
+
+        <div class="step1-bottom">
+          <div
+            class="onboarding-actions"
+            onclick="location.href = 'onboarding3.html'"
+          >
+            <span>Next</span>
+            <img src="assets/icon/range.png" alt="next" class="next-icon" />
+          </div>
+          <div class="onboarding-bar-container">
+            <div class="onboarding-bar-fill" style="width: 75%"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

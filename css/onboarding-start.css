@@ -116,6 +116,15 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 1023px) {
+  .onboarding-wrapper {
+    gap: 40px;
+  }
+  .bottom-area {
+    gap: 40px;
+  }
+}
+
 /* =========================
    5. 태블릿
 ========================= */
@@ -127,7 +136,7 @@ body {
 
   .onboarding-wrapper {
     padding-top: 140px;
-    gap: 100px;
+    gap: 40px;
   }
 
   .onboarding-image {
@@ -216,6 +225,6 @@ body {
   .onboarding-actions {
     font-size: 24px;
     transform: translateY(28px);
-    margin-right: 100px;
+    margin-right: 150px;
   }
 }
