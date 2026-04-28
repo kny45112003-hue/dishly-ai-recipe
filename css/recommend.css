@@ -1,0 +1,360 @@
+/* 1. 기본 레이아웃 (공통) */
+.layout {
+  display: flex;
+  flex-direction: column; /* 기본은 위아래 배치 (모바일/태블릿) */
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+/* 2. 모바일 & 태블릿 전용 (~ 1023px) */
+@media screen and (max-width: 1023px) {
+  .desktop-sidebar {
+    display: none !important; /* 사이드바 완전 제거 */
+  }
+
+  .mobile-header {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .bottom-nav {
+    display: block !important;
+  }
+
+  .main-wrapper {
+    margin-top: 60px; /* 헤더 높이만큼 본문 밀기 */
+    padding-bottom: 110px; /* 하단바 높이만큼 여백 */
+    width: 100%;
+  }
+
+  .recommend-main-content {
+    padding: var(--spacing-24) var(--spacing-16);
+  }
+}
+
+/* 3. 데스크탑 전용 (1024px 이상) */
+@media screen and (min-width: 1024px) {
+  /* 모바일/태블릿 요소 제거 */
+  .mobile-header,
+  .bottom-nav {
+    display: none !important;
+  }
+
+  /* 사이드바와 본문을 가로로 나란히 배치 */
+  .layout {
+    flex-direction: row !important;
+    height: 100vh !important; /* 화면 높이 고정 */
+    overflow: hidden !important; /* 전체 페이지 스크롤 방지 */
+  }
+
+  .main-wrapper {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    /* 사이드바가 둥근 형태라면 아래 여백 활용 */
+    padding: 24px;
+    background-color: var(--gray-50);
+  }
+
+  /* 🔥 본문 영역: 사이드바 옆에서 독립 스크롤 */
+  .recommend-main-content {
+    flex: 1 !important;
+    height: 100% !important;
+    overflow-y: auto !important; /* 여기서만 스크롤 발생 */
+    background-color: var(--gray-50);
+    padding: 60px 80px;
+  }
+}
+
+/* --- 추천 페이지 내부 요소 스타일 --- */
+
+/* 추천 생성 카드 */
+.generator-card {
+  background: #fff;
+  border-radius: 32px;
+  padding: var(--spacing-24);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  margin-top: var(--spacing-24);
+}
+
+/* 재료 추가 박스 (점선) */
+.ingredient-upload-box {
+  border: 2px dashed var(--primary-lighten-bule-300);
+  border-radius: 24px;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: var(--spacing-24);
+}
+
+.add-circle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--gray-200);
+  color: var(--primary-lighten-bule-900);
+  font-size: 24px;
+  margin-top: 16px;
+}
+
+/* 필터 그룹 및 구분선 */
+.filter-group {
+  padding: var(--spacing-20) 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.filter-group:last-child {
+  border-bottom: none;
+}
+
+.chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-12);
+}
+
+.chip {
+  padding: var(--spacing-4) var(--spacing-12);
+  border-radius: 999px;
+  border: 1px solid var(--gray-200);
+  background: #fff;
+  font-size: var(--font-size-sm);
+  color: var(--gray-500);
+  transition: all 0.2s;
+}
+
+.chip.is-active {
+  background: var(--primary-lighten-bule-900);
+  color: #fff;
+  border-color: var(--primary-lighten-bule-900);
+}
+
+.unit {
+  font-size: var(--font-size-sm);
+  color: var(--gray-400);
+  margin-left: 4px;
+}
+
+/* 오늘의 추천 섹션 */
+.today-recommend {
+  margin-top: 60px;
+  padding-bottom: 40px;
+}
+
+.card-thumbnail {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative; /* 🔥 자식 요소인 글자의 기준점이 됨 */
+  background-color: var(--gray-100);
+}
+
+.card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 이미지가 그림자(box-shadow)를 가리지 않도록 뒤로 보냅니다 */
+  display: block;
+}
+/* 2. 🔥 그림자만 담당하는 레이어를 이미지 위에 씌웁니다 */
+.card-thumbnail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* 여기에 제공해주신 그림자 코드를 넣습니다 */
+  /* inset 대신 일반 shadow처럼 작동하도록 보정하거나, 
+     배경색 그라데이션을 주는 것이 이미지 위에서는 더 확실합니다. */
+  box-shadow: inset 0px -102.308px 65.9615px rgba(0, 0, 0, 0.75);
+
+  pointer-events: none; /* 클릭 방해 금지 */
+  z-index: 1; /* 이미지보다 위 */
+}
+
+/* 🔥 그림자 위에 겹쳐질 텍스트 정보창 */
+.card-overlay-info {
+  position: absolute;
+  bottom: 20px; /* 아래에서 20px 띄움 */
+  left: 20px; /* 왼쪽에서 20px 띄움 */
+  right: 20px; /* 오른쪽에서 20px 띄움 */
+
+  display: flex;
+  justify-content: space-between; /* 이름은 왼쪽, 칼로리는 오른쪽 배치 */
+  align-items: flex-end;
+
+  color: #ffffff; /* 그림자가 어두우므로 글자는 흰색 */
+  z-index: 2;
+}
+
+.menu-name {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+}
+
+.menu-kcal {
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  opacity: 0.9; /* 칼로리는 살짝 투명하게 처리 가능 */
+}
+/* 그리드 레이아웃 (공통 토큰 card-container 활용 보완) */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: var(--spacing-18);
+}
+.card-section {
+  padding-bottom: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .ingredient-upload-box {
+    border: 2px dashed var(--primary-lighten-bule-300);
+    border-radius: 24px;
+    padding: 30px 15px;
+    text-align: center;
+    margin-bottom: var(--spacing-24);
+  }
+  .heading-3 {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -0.02em;
+  }
+  .caption {
+    font-size: var(--font-size-xs);
+  }
+  .add-circle-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+  .filter-group {
+    padding: var(--spacing-10) 0;
+  }
+  .chip {
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 10px;
+  }
+  .btn {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background-color: var(--primary-darken-bule-800);
+    color: var(--color-text-invers);
+    padding: 12px 2px;
+    border-radius: 999px;
+  }
+  .heading-2 {
+    font-size: var(--font-size-lg);
+  }
+  .card-thumbnail::after {
+    box-shadow: inset 0px -40px 32px rgba(0, 0, 0, 0.75);
+  }
+  .menu-name {
+    font-size: var(--font-size-xxs);
+    font-weight: 600;
+  }
+  .menu-kcal {
+    font-size: var(--font-size-xxs);
+    font-weight: 400;
+    opacity: 0.9;
+  }
+}
+@media screen and (max-width: 767px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* 모바일은 2열 */
+    gap: var(--spacing-12);
+  }
+}
+
+/* ... 상단 공통 스타일 및 모바일 스타일 유지 ... */
+
+/* 3. 데스크탑 전용 (1024px 이상) */
+@media screen and (min-width: 1024px) {
+  /* 모바일/태블릿 요소 제거 */
+  .mobile-header,
+  .bottom-nav {
+    display: none !important;
+  }
+
+  /* 🔥 화면 고정 및 중앙 정렬 */
+  body {
+    background-color: var(--gray-50);
+    display: flex;
+    justify-content: center; /* 가로 중앙 */
+    align-items: center; /* 세로 중앙 */
+    min-height: 100vh;
+  }
+
+  .layout {
+    flex-direction: row !important;
+
+    /* 🛠️ 전체 프레임 크기 고정 */
+    width: 1280px !important;
+    height: 800px !important;
+    max-height: 95vh;
+
+    background-color: var(--gray-50);
+    border-radius: 32px;
+
+    overflow: hidden !important;
+    position: relative;
+  }
+
+  .main-wrapper {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    padding: 40px;
+  }
+
+  /* 🔥 본문 영역: 내부에서만 스크롤되도록 설정 */
+  .recommend-main-content {
+    flex: 1 !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    background-color: var(--gray-50); /* 배경은 흰색 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 내용물을 가로 중앙으로 정렬 */
+  }
+
+  /* 🛠️ 실제 콘텐츠 너비 고정 포인트 */
+  .inner-content {
+    width: 100%;
+    max-width: 860px; /* 👈 이 너비 이상으로 벌어지지 않게 고정 */
+    padding: 60px 40px; /* 위아래 60px, 좌우 40px 여백 */
+    margin: 0 auto; /* 중앙 배치 */
+  }
+}
+
+/* 카드 크기 보정 (데스크탑 그리드 내에서 꽉 차게) */
+.card-thumbnail {
+  width: 100% !important; /* 고정 수치 삭제하고 100%로 유연하게 */
+  aspect-ratio: 1 / 1;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) !important; /* 2열 고정 */
+  gap: var(--spacing-24); /* 시안과 같은 여백 */
+  width: 100%;
+}
