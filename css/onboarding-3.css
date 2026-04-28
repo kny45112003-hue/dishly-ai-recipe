@@ -2,10 +2,29 @@
 
 .onboarding-step3 {
   width: 100%;
-  height: 100%;
+  height: 80%;
   position: relative;
 }
 
+.step3-header {
+  padding: 60px 24px 0;
+}
+
+.step-label {
+  margin-bottom: 12px;
+}
+
+.onboarding-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.onboarding-desc {
+  font-size: 12px;
+  color: #666;
+  margin-top: 12px;
+}
 /* --- 재료 표시창 스타일 --- */
 .ingredient-display {
   width: 100%;
@@ -31,11 +50,11 @@
 .btn-scan,
 .btn-input {
   width: 100%;
-  max-width: 280px;
-  padding: 14px;
+  max-width: 200px;
+  padding: 8px;
   border-radius: 999px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
   border: 1.5px solid #2563eb;
   display: flex;
@@ -44,16 +63,19 @@
   gap: 8px;
 }
 
+.registration-container {
+  align-items: normal;
+}
 /* 기본 상태 */
 .btn-scan {
   width: 100%;
   max-width: 280px;
-  padding: 14px;
+  padding: 10px;
   border-radius: 999px;
   border: 1.5px solid #2563eb;
   background: #ffffff;
   color: #2563eb;
-  font-weight: 700;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,15 +109,65 @@
   height: auto;
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+  .ingredient-display {
+    width: 100%;
+    max-width: 260px;
+    height: 180px;
+    background: #f3f4f6;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #9ca3af;
+    font-size: 14px;
+    margin: 20px auto 24px;
+  }
+  .step-bottom,
+  .bottom-area,
+  .step1-bottom {
+    position: absolute;
+    left: 35px;
+    right: 35px;
+    bottom: -70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 40px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
-  .step2-header {
+  .step3-header {
     padding: 120px 200px 0;
+  }
+
+  .onboarding-step3 {
+    height: 100%; /* 🔥 80%에서 100%로 수정 (프레임 전체 사용) */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 위에서부터 차곡차곡 쌓이게 함 */
+  }
+
+  .ingredient-display {
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    background: #f3f4f6;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #9ca3af;
+    font-size: 14px;
+    margin: 40px auto 24px;
   }
   .step1-bottom {
     position: absolute;
     left: 200px;
     right: 232px;
-    bottom: 70px;
+    bottom: 276px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -111,20 +183,45 @@
   .step3-header {
     position: absolute;
     left: 70px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 90px;
     text-align: left;
+    padding: 0;
+  }
+  .onboarding-title {
+    font-size: 32px;
+  }
+
+  .onboarding-desc {
+    font-size: 18px;
+    margin-top: 12px;
+  }
+
+  .onboarding-bar-container {
+    width: 420px;
   }
 
   .registration-container {
     position: absolute;
-    right: 80px;
-    top: 50%;
+    right: 104px;
+    top: 40%;
     transform: translateY(-50%);
     width: 400px; /* 재료 박스 너비 */
   }
 
   .ingredient-display {
     height: 240px;
+  }
+  .step1-bottom {
+    position: absolute;
+    left: 80px;
+    right: 56px;
+    bottom: 136px;
+    flex-direction: row-reverse;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .onboarding-actions {
+    transform: translateY(-22px);
   }
 }

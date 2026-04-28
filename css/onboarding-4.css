@@ -1,0 +1,131 @@
+.onboarding-step4 {
+  width: 100%;
+  height: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- 상단 텍스트 --- */
+.step4-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.onboarding-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+.onboarding-desc {
+  font-size: 12px;
+  color: #666;
+  margin-top: 12px;
+}
+/* --- 일러스트 크기 조절 --- */
+.celebration-container {
+  width: 80%;
+  max-width: 400px;
+  margin-bottom: 60px;
+}
+
+.celebration-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* --- 🔥 마지막 하단 버튼 스타일 --- */
+.step4-bottom {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.btn-final-start {
+  width: 100%;
+  max-width: 320px;
+  padding: 16px 0;
+  background: #e5e7eb; /* 초기 비활성 느낌의 회색 또는 브랜드 컬러 */
+  color: #9ca3af;
+  border: none;
+  border-radius: 99px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 호버 시 파란색으로 변하는 효과 (선택 사항) */
+.btn-final-start:hover {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .btn-final-start {
+    padding: 8px 0;
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .btn-final-start {
+    padding: 12px 0;
+  }
+
+  .step4-bottom {
+    bottom: 164px;
+  }
+}
+/* --- 데스크탑 배치 --- */
+@media (min-width: 1024px) {
+  .step4-header {
+    position: absolute;
+    left: 70px;
+    top: 128px;
+    text-align: left;
+    padding: 0;
+    flex: 1;
+  }
+  .onboarding-title {
+    font-size: 32px;
+  }
+
+  .onboarding-desc {
+    font-size: 18px;
+    margin-top: 12px;
+  }
+  .onboarding-step4 {
+    flex-direction: row; /* 데스크탑은 좌우 배치 고려 가능 */
+    padding: 0 80px;
+
+    width: 144%;
+    height: 70%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .celebration-container {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .step4-bottom {
+    bottom: 80px;
+    justify-content: center; /* 버튼은 여전히 중앙 하단 */
+  }
+
+  .btn-final-start {
+    max-width: 400px;
+    font-size: 18px;
+  }
+}

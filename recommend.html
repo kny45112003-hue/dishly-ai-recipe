@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레시피 추천</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/recommend.css" />
+
+    <script src="js/recommend.js" defer></script>
+  </head>
+  <body>
+    <div class="layout">
+      <header class="mobile-header container">
+        <a href="#" class="logo">
+          <img src="assets/icon/log=icon.png" alt="Dishly 로고" />
+        </a>
+        <div class="header-actions">
+          <button class="icon-btn" type="button" aria-label="프로필">
+            <img src="assets/icon/human-icon.png" alt="프로필 로고" />
+          </button>
+          <button class="icon-btn" type="button" aria-label="메뉴">
+            <img src="assets/icon/menu.png" alt="메뉴 로고" />
+          </button>
+        </div>
+      </header>
+
+      <div class="main-wrapper">
+        <aside class="desktop-sidebar">
+          <div class="desktop-sidebar-logo">
+            <img src="assets/icon/log=icon.png" alt="Dishly" />
+          </div>
+          <nav class="desktop-sidebar-menu">
+            <button
+              class="desktop-menu-item is-active"
+              type="button"
+              onclick="location.href = 'index.html'"
+              data-default="assets/icon/home-icon-nomal.png"
+              data-hover="assets/icon/home-icon-chose.png"
+              data-active="assets/icon/home-icon-chose.png"
+            >
+              <img
+                src="assets/icon/home-icon-chose.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>메인</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'recommend.html'"
+              data-default="assets/icon/recipe-icon-nomal.png"
+              data-hover="assets/icon/recipe-icon-chose.png"
+              data-active="assets/icon/recipe-icon-chose.png"
+            >
+              <img
+                src="assets/icon/recipe-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>레시피 추천</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'refrigerator.html'"
+              data-default="assets/icon/stuff-icon-nomal.png"
+              data-hover="assets/icon/stuff-icon-chose.png"
+              data-active="assets/icon/stuff-icon-chose.png"
+            >
+              <img
+                src="assets/icon/stuff-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>나의 냉장고</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'recipe.html'"
+              data-default="assets/icon/save-icon-nomal.png"
+              data-hover="assets/icon/save-icon-chose.png"
+              data-active="assets/icon/save-icon-chose.png"
+            >
+              <img
+                src="assets/icon/save-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>레시피 기록</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'record.html'"
+              data-default="assets/icon/record-icon-nomal.png"
+              data-hover="assets/icon/record-icon-chose.png"
+              data-active="assets/icon/record-icon-chose.png"
+            >
+              <img
+                src="assets/icon/record-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>식단 달력</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'mypage.html'"
+              data-default="assets/icon/mypage-icon-nomal.png"
+              data-hover="assets/icon/mypage-icon-chose.png"
+              data-active="assets/icon/mypage-icon-chose.png"
+            >
+              <img
+                src="assets/icon/mypage-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>마이 페이지</span>
+            </button>
+          </nav>
+          <div class="desktop-sidebar-banner">
+            <img src="assets/image/Frame 122.png" alt="promo" />
+            <p>카메라로 재료를<br />간편하게 등록하세요!</p>
+            <button class="desktop-sidebar-banner-btn">+ 재료 추가하기</button>
+          </div>
+        </aside>
+
+        <main class="recommend-main-content">
+          <div class="inner-content">
+            <section class="generator-card">
+              <div class="ingredient-upload-box">
+                <p class="heading-3">재료 추가하기</p>
+                <p class="caption">레시피 생성을 위해 재료를 추가해주세요</p>
+                <button class="add-circle-btn">+</button>
+              </div>
+
+              <div class="filter-section">
+                <div class="filter-group">
+                  <label class="caption-1">목표 칼로리</label>
+                  <div class="chip-container">
+                    <button class="chip">200</button>
+                    <button class="chip">300</button>
+                    <button class="chip is-active">400</button>
+                    <button class="chip">500</button>
+                    <span class="unit">kcal</span>
+                  </div>
+                </div>
+                <div class="filter-group">
+                  <label class="caption-1">조리 시간</label>
+                  <div class="chip-container">
+                    <button class="chip">10</button>
+                    <button class="chip">20</button>
+                    <button class="chip">30</button>
+                    <button class="chip">40</button>
+                    <button class="chip is-active">50</button>
+                    <span class="unit">min</span>
+                  </div>
+                </div>
+                <div class="filter-group">
+                  <label class="caption-1">난의도</label>
+                  <div class="chip-container">
+                    <button class="chip">어려움</button>
+                    <button class="chip">중간</button>
+                    <button class="chip">쉬움</button>
+                    <button class="chip">간단</button>
+                  </div>
+                </div>
+              </div>
+              <button class="btn" style="width: 100%; margin-top: 24px">
+                + 맞춤 레시피 추천받기
+              </button>
+            </section>
+
+            <section class="today-recommend">
+              <h2 class="card-section heading-2">오늘의 추천</h2>
+              <div class="card-container">
+                <div class="recipe-card">
+                  <div class="card-thumbnail">
+                    <img src="assets/image/totia.png" alt="totia" />
+                    <div class="card-overlay-info">
+                      <span class="menu-name">샐러드 랩</span>
+                      <span class="menu-kcal">350 kcal</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="recipe-card">
+                  <div class="card-thumbnail">
+                    <img src="assets/image/pasta.png" alt="pasta" />
+
+                    <div class="card-overlay-info">
+                      <span class="menu-name">샐러드 파스타</span>
+                      <span class="menu-kcal">480 kcal</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="recipe-card">
+                  <div class="card-thumbnail">
+                    <img src="assets/image/pasta.png" alt="pasta" />
+
+                    <div class="card-overlay-info">
+                      <span class="menu-name">샐러드 파스타</span>
+                      <span class="menu-kcal">480 kcal</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="recipe-card">
+                  <div class="card-thumbnail">
+                    <img src="assets/image/totia.png" alt="totia" />
+                    <div class="card-overlay-info">
+                      <span class="menu-name">샐러드 랩</span>
+                      <span class="menu-kcal">350 kcal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <footer class="site-footer">
+            <div class="container">
+              <p class="footer-logo">Dishly</p>
+              <p class="footer-text">
+                나만의 식단을 더 쉽게 관리하는 레시피 서비스
+              </p>
+              <p class="footer-copy">© 2026 Dishly. All rights reserved.</p>
+            </div>
+          </footer>
+        </main>
+      </div>
+
+      <nav class="bottom-nav">
+        <div class="bottom-nav-inner">
+          <button
+            class="bottom-nav-item is-active"
+            type="button"
+            onclick="location.href = 'index.html'"
+            data-default="assets/icon/home-icon-nomal.png"
+            data-hover="assets/icon/home-icon-chose.png"
+            data-active="assets/icon/home-icon-chose.png"
+            aria-label="홈"
+          >
+            <img
+              src="assets/icon/home-icon-nomal.png"
+              alt=""
+              class="bottom-nav-icon"
+            />
+            <span class="bottom-nav-text">홈</span>
+          </button>
+
+          <button
+            class="bottom-nav-item"
+            type="button"
+            onclick="location.href = 'recommend.html'"
+            data-default="assets/icon/recipe-icon-nomal.png"
+            data-hover="assets/icon/recipe-icon-chose.png"
+            data-active="assets/icon/recipe-icon-chose.png"
+            aria-label="레시피"
+          >
+            <img
+              src="assets/icon/recipe-icon-nomal.png"
+              alt=""
+              class="bottom-nav-icon"
+            />
+            <span class="bottom-nav-text">레시피</span>
+          </button>
+
+          <button
+            class="bottom-nav-item"
+            type="button"
+            onclick="location.href = 'refrigerator.html'"
+            recipe
+            data-default="assets/icon/stuff-icon-nomal.png"
+            data-hover="assets/icon/stuff-icon-chose.png"
+            data-active="assets/icon/stuff-icon-chose.png"
+            aria-label="재료"
+          >
+            <img
+              src="assets/icon/stuff-icon-nomal.png"
+              alt=""
+              class="bottom-nav-icon"
+            />
+            <span class="bottom-nav-text">재료</span>
+          </button>
+
+          <button
+            class="bottom-nav-item"
+            type="button"
+            onclick="location.href = 'recipe.html'"
+            data-default="assets/icon/save-icon-nomal.png"
+            data-hover="assets/icon/save-icon-chose.png"
+            data-active="assets/icon/save-icon-chose.png"
+            aria-label="저장"
+          >
+            <img
+              src="assets/icon/save-icon-nomal.png"
+              alt=""
+              class="bottom-nav-icon"
+            />
+            <span class="bottom-nav-text">저장</span>
+          </button>
+
+          <button
+            class="bottom-nav-item"
+            type="button"
+            onclick="location.href = 'record.html'"
+            data-default="assets/icon/record-icon-nomal.png"
+            data-hover="assets/icon/record-icon-chose.png"
+            data-active="assets/icon/record-icon-chose.png"
+            aria-label="기록"
+          >
+            <img
+              src="assets/icon/record-icon-nomal.png"
+              alt=""
+              class="bottom-nav-icon"
+            />
+            <span class="bottom-nav-text">기록</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>
