@@ -141,6 +141,11 @@
     padding: 40px;
   }
 
+  .action-area {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+  }
   /* 본문 스크롤 영역 */
   .content-header {
     margin-bottom: 24px;
@@ -196,14 +201,120 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .camera-preview {
-    aspect-ratio: 1 / 1.2;
+  .layout {
+    padding-left: 20px;
+    padding-right: 20px;
   }
+  .heading-1 {
+    font-size: var(--font-size-2xl);
+  }
+  /* 1. 본문 전체를 감싸는 부모 컨테이너 수정 */
+  .recommend-main-content {
+    display: flex;
+    flex-direction: column;
+    /* 🔥 핵심: 자식 요소들을 가로축 중앙으로 정렬 */
+    align-items: center !important;
+    width: 100%;
+  }
+
+  /* 2. 내용물이 담긴 박스 수정 */
+  .inner-content {
+    width: 100%;
+    max-width: 860px; /* 원하는 최대 너비 */
+    /* 🔥 핵심: 좌우 마진을 auto로 주어 중앙에 배치 */
+    margin: 0 auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 내부의 제목, 냉장고, 버튼 모두 중앙 정렬 */
+    text-align: center;
+  }
+
+  /* 3. 냉장고 프리뷰와 버튼 영역도 확인 */
+  .scan-container,
+  .action-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 내부 요소들 중앙 정렬 */
+    justify-content: center;
+  }
+  .scan-guide {
+    display: none;
+  }
+
+  .action-area {
+    flex-direction: row; /* 버튼은 가로로 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    display: flex;
+    gap: 16px;
+    margin-top: -200px;
+  }
+
+  .content-header {
+    margin-top: 120px;
+    /* 🔥 글자들을 가운데로 정렬 */
+    text-align: center;
+
+    /* 만약 부모 요소 때문에 왼쪽으로 쏠려 있다면 아래 속성도 추가하세요 */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .camera-preview {
+    flex-direction: column;
+    aspect-ratio: 1 / 1.2;
+    height: 640px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .camera-img {
+    width: 100% auto;
+    height: auto;
+
+    object-fit: cover;
+    /* 🔥 이미지 자체도 중앙 정렬 확인 */
+    display: block;
+    margin: 0 auto;
+  }
+  .btn-main-scan {
+    width: 140px; /* 버튼 너비 소폭 조정 */
+    height: 48px;
+    background-color: var(--primary-darken-bule-800);
+    color: #fff;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
   .desktop-sidebar {
     display: none !important;
   }
   .btn-main-scan {
     width: 140px;
     font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 767px) {
+  .btn-main-scan {
+    width: 120px;
+    height: 40px;
+    font-size: var(--font-size-sm);
+  }
+}
+@media (max-width: 574px) {
+  .action-area {
+    margin-top: -258px;
+  }
+}
+@media (max-width: 354px) {
+  .action-area {
+    margin-top: -350px;
   }
 }

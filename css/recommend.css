@@ -4,7 +4,7 @@
   flex-direction: column; /* 기본은 위아래 배치 (모바일/태블릿) */
   width: 100%;
   min-height: 100vh;
-  background-color: #fff;
+  background-color: var(--gray-100);
 }
 
 /* 2. 모바일 & 태블릿 전용 (~ 1023px) */
@@ -296,7 +296,7 @@
 
   /* 🔥 화면 고정 및 중앙 정렬 */
   body {
-    background-color: var(--gray-50);
+    background-color: var(--gray-100);
     display: flex;
     justify-content: center; /* 가로 중앙 */
     align-items: center; /* 세로 중앙 */
@@ -311,7 +311,7 @@
     height: 800px !important;
     max-height: 95vh;
 
-    background-color: var(--gray-50);
+    background-color: var(--gray-100);
     border-radius: 32px;
 
     overflow: hidden !important;
@@ -324,6 +324,7 @@
     height: 100%;
     overflow: hidden;
     padding: 40px;
+    background-color: var(--gray-100);
   }
 
   /* 🔥 본문 영역: 내부에서만 스크롤되도록 설정 */
@@ -331,7 +332,7 @@
     flex: 1 !important;
     height: 100% !important;
     overflow-y: auto !important;
-    background-color: var(--gray-50); /* 배경은 흰색 */
+    background-color: var(--gray-100); /* 배경은 흰색 */
     display: flex;
     flex-direction: column;
     align-items: center; /* 내용물을 가로 중앙으로 정렬 */

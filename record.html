@@ -10,5 +10,296 @@
 
     <script src="js/record.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header class="mobile-header container">
+      <a href="#" class="logo">
+        <img src="assets/icon/log=icon.png" alt="Dishly 로고" />
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" type="button" aria-label="프로필">
+          <img src="assets/icon/human-icon.png" alt="프로필 로고" />
+        </button>
+        <button class="icon-btn" type="button" aria-label="메뉴">
+          <img src="assets/icon/menu.png" alt="메뉴 로고" />
+        </button>
+      </div>
+    </header>
+    <div class="layout">
+      <div class="main-wrapper">
+        <aside class="desktop-sidebar">
+          <div class="desktop-sidebar-logo">
+            <img src="assets/icon/log=icon.png" alt="Dishly" />
+          </div>
+          <nav class="desktop-sidebar-menu">
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'index.html'"
+              data-default="assets/icon/home-icon-nomal.png"
+              data-hover="assets/icon/home-icon-chose.png"
+              data-active="assets/icon/home-icon-chose.png"
+            >
+              <img
+                src="assets/icon/home-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>메인</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'recommend.html'"
+              data-default="assets/icon/recipe-icon-nomal.png"
+              data-hover="assets/icon/recipe-icon-chose.png"
+              data-active="assets/icon/recipe-icon-chose.png"
+            >
+              <img
+                src="assets/icon/recipe-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>레시피 추천</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'refrigerator.html'"
+              data-default="assets/icon/stuff-icon-nomal.png"
+              data-hover="assets/icon/stuff-icon-chose.png"
+              data-active="assets/icon/stuff-icon-chose.png"
+            >
+              <img
+                src="assets/icon/stuff-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>나의 냉장고</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'recipe.html'"
+              data-default="assets/icon/save-icon-nomal.png"
+              data-hover="assets/icon/save-icon-chose.png"
+              data-active="assets/icon/save-icon-chose.png"
+            >
+              <img
+                src="assets/icon/save-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>레시피 기록</span>
+            </button>
+
+            <button
+              class="desktop-menu-item is-active"
+              type="button"
+              onclick="location.href = 'record.html'"
+              data-default="assets/icon/record-icon-nomal.png"
+              data-hover="assets/icon/record-icon-chose.png"
+              data-active="assets/icon/record-icon-chose.png"
+            >
+              <img
+                src="assets/icon/record-icon-chose.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>식단 달력</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'mypage.html'"
+              data-default="assets/icon/mypage-icon-nomal.png"
+              data-hover="assets/icon/mypage-icon-chose.png"
+              data-active="assets/icon/mypage-icon-chose.png"
+            >
+              <img
+                src="assets/icon/mypage-icon-nomal2.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>마이 페이지</span>
+            </button>
+          </nav>
+          <div class="desktop-sidebar-banner">
+            <img src="assets/image/Frame 122.png" alt="promo" />
+            <p>카메라로 재료를<br />간편하게 등록하세요!</p>
+            <button class="desktop-sidebar-banner-btn">+ 재료 추가하기</button>
+          </div>
+        </aside>
+
+        <main class="recommend-main-content">
+          <div class="inner-content">
+            <header class="content-header">
+              <h1 class="heading-2">식단 달력</h1>
+            </header>
+
+            <section class="calendar-container">
+              <div class="calendar-header">
+                <button class="calendar-nav-btn">&lt;</button>
+                <h2 class="current-month">2026. 04</h2>
+                <button class="calendar-nav-btn">&gt;</button>
+              </div>
+
+              <div class="calendar-days">
+                <span>일</span><span>월</span><span>화</span><span>수</span>
+                <span>목</span><span>금</span><span>토</span>
+              </div>
+
+              <div id="calendarGrid" class="calendar-grid"></div>
+            </section>
+            <section class="status-section">
+              <div class="status-card single-graph-card">
+                <div class="status-header">
+                  <p class="status-label">오늘 총 섭취 칼로리</p>
+                </div>
+
+                <div class="half-donut half-donut--total" id="recordTotalGraph">
+                  <div class="half-donut-inner">
+                    <h2 id="recordCurrentCalorie" class="total-calorie-value">
+                      770
+                    </h2>
+                    <span class="unit">kcal</span>
+                  </div>
+                </div>
+
+                <div class="goal-bar-container">
+                  <span class="goal-label"
+                    >목표: <span id="recordGoalCalorie">2000</span> kcal</span
+                  >
+                  <div class="goal-bar-bg">
+                    <div class="goal-bar-fill" id="recordGoalBar"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="daily-record-section">
+              <div class="section-header">
+                <h3 class="record-date">04. 29 식단</h3>
+              </div>
+
+              <div class="record-list">
+                <div class="record-item">
+                  <div class="item-visual">
+                    <img src="assets/image/rap.png" alt="식단 이미지" />
+                  </div>
+                  <div class="item-info">
+                    <span class="meal-time">아침</span>
+                    <h4 class="menu-name">샐러드 랩</h4>
+                  </div>
+                  <span class="menu-kcal">320 kcal</span>
+                </div>
+
+                <div class="record-item">
+                  <div class="item-visual">
+                    <img src="assets/image/tomatoegg.png" alt="식단 이미지" />
+                  </div>
+                  <div class="item-info">
+                    <span class="meal-time">점심</span>
+                    <h4 class="menu-name">토마토 계란 볶음</h4>
+                  </div>
+                  <span class="menu-kcal">450 kcal</span>
+                </div>
+                <div class="record-item">
+                  <div class="item-visual">
+                    <img src="assets/image/none.png" alt="식단 이미지" />
+                  </div>
+                  <div class="item-info">
+                    <span class="meal-time">저녁</span>
+                    <h4 class="menu-name">없음</h4>
+                  </div>
+                  <span class="menu-kcal">0 kcal</span>
+                </div>
+              </div>
+            </section>
+          </div>
+          <footer class="site-footer">
+            <div class="container">
+              <p class="footer-logo">Dishly</p>
+              <p class="footer-text">
+                나만의 식단을 더 쉽게 관리하는 레시피 서비스
+              </p>
+              <p class="footer-copy">© 2026 Dishly. All rights reserved.</p>
+            </div>
+          </footer>
+        </main>
+
+        <nav class="bottom-nav">
+          <div class="bottom-nav-inner">
+            <button
+              class="bottom-nav-item"
+              onclick="location.href = 'index.html'"
+              data-default="assets/icon/home-icon-nomal.png"
+              data-hover="assets/icon/home-icon-chose.png"
+              data-active="assets/icon/home-icon-chose.png"
+            >
+              <img
+                src="assets/icon/home-icon-nomal.png"
+                class="bottom-nav-icon"
+              />
+              <span class="bottom-nav-text">홈</span>
+            </button>
+            <button
+              class="bottom-nav-item"
+              onclick="location.href = 'recommend.html'"
+              data-default="assets/icon/recipe-icon-nomal.png"
+              data-hover="assets/icon/recipe-icon-chose.png"
+              data-active="assets/icon/recipe-icon-chose.png"
+            >
+              <img
+                src="assets/icon/recipe-icon-nomal.png"
+                class="bottom-nav-icon"
+              />
+              <span class="bottom-nav-text">레시피</span>
+            </button>
+            <button
+              class="bottom-nav-item"
+              onclick="location.href = 'refrigerator.html'"
+              data-default="assets/icon/stuff-icon-nomal.png"
+              data-hover="assets/icon/stuff-icon-chose.png"
+              data-active="assets/icon/stuff-icon-chose.png"
+            >
+              <img
+                src="assets/icon/stuff-icon-chose.png"
+                class="bottom-nav-icon"
+              />
+              <span class="bottom-nav-text">재료</span>
+            </button>
+            <button
+              class="bottom-nav-item"
+              onclick="location.href = 'recipe.html'"
+              data-default="assets/icon/save-icon-nomal.png"
+              data-hover="assets/icon/save-icon-chose.png"
+              data-active="assets/icon/save-icon-chose.png"
+            >
+              <img
+                src="assets/icon/save-icon-nomal.png"
+                class="bottom-nav-icon"
+              />
+              <span class="bottom-nav-text">저장</span>
+            </button>
+            <button
+              class="bottom-nav-item is-active"
+              onclick="location.href = 'record.html'"
+              data-default="assets/icon/record-icon-nomal.png"
+              data-hover="assets/icon/record-icon-chose.png"
+              data-active="assets/icon/record-icon-chose.png"
+            >
+              <img
+                src="assets/icon/record-icon-nomal.png"
+                class="bottom-nav-icon"
+              />
+              <span class="bottom-nav-text">기록</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </body>
 </html>
