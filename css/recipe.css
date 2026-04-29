@@ -1,0 +1,373 @@
+/* 1. 기본 레이아웃 구성 */
+.layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--gray-100);
+}
+
+/* ============================================================
+   📱 모바일 & 태블릿 (~ 1023px)
+   ============================================================ */
+
+/* ============================================================
+   📟 태블릿 전용 (768px ~ 1023px)
+   ============================================================ */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    justify-content: center; /* 🔥 가로축 정중앙 정렬 */
+    align-items: center; /* 🔥 세로축 정중앙 정렬 */
+    background-color: var(--gray-100);
+  }
+  .layout {
+    width: 768px !important;
+    height: 1024px !important; /* 세로형 태블릿 기준 */
+    border-radius: 24px;
+    gap: 16px;
+    display: flex !important;
+    /* margin: auto는 flex 부모 안에서 중앙 배치를 돕습니다 */
+    margin: 0 auto !important;
+  }
+  .inner-content {
+    padding: 24px;
+  }
+  .desktop-sidebar {
+    display: none;
+  } /* 사이드바 살짝 축소 */
+}
+
+/* ============================================================
+   📱 모바일 전용 (~ 767px)
+   ============================================================ */
+@media screen and (max-width: 767px) {
+  body {
+    justify-content: center; /* 🔥 가로축 정중앙 정렬 */
+    align-items: center; /* 🔥 세로축 정중앙 정렬 */
+    background-color: var(--gray-100);
+  }
+  .layout {
+    width: 320px !important;
+    min-height: 100vh;
+    flex-direction: column;
+    display: flex !important;
+    /* margin: auto는 flex 부모 안에서 중앙 배치를 돕습니다 */
+    margin: 0 auto !important;
+  }
+  .inner-content {
+    padding: 24px;
+  }
+  .desktop-sidebar {
+    display: none !important;
+  }
+  /* 모바일에서는 좌우 배치를 상하 배치로 변경 */
+  .card-content-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .recipe-main-img {
+    height: 200px !important;
+  }
+  .recipe-visual-aside {
+    height: 280px !important;
+  }
+  .recipe-title {
+    font-size: 18px !important;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .recipe-kcal {
+    font-size: 14px !important;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.9;
+  }
+  .heading-2 {
+    font-size: var(--font-size-lg);
+  }
+  .card-thumbnail::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 150px -170px 20px 20px rgba(0, 0, 0, 0.75);
+    pointer-events: none;
+    opacity: 70%;
+    z-index: 1;
+  }
+}
+
+/* ============================================================
+   💻 데스크탑 전용 (1024px 이상)
+   ============================================================ */
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: var(--gray-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  .layout {
+    display: flex !important;
+    flex-direction: row !important;
+    /* 🛠️ 사용자 요청: 1024px 사이즈 고정 */
+    width: 1024px !important;
+    height: 768px !important;
+    background-color: var(--gray-100) !important;
+    padding: 40px !important;
+    gap: 20px;
+    border-radius: 32px;
+    overflow: hidden;
+  }
+
+  .mobile-header,
+  .bottom-nav {
+    display: none !important;
+  }
+
+  .main-wrapper {
+    flex: 1 !important;
+    display: flex !important;
+  }
+
+  .desktop-sidebar {
+    width: 240px !important;
+    flex-shrink: 0;
+  }
+
+  .recommend-main-content {
+    flex: 1 !important;
+    background-color: var(--gray-100) !important;
+    border-radius: 32px !important;
+    padding: 40px !important;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .inner-content {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .btn-play-recipe {
+    width: 184px;
+  }
+}
+
+/* ============================================================
+   🍱 레시피 결과 카드 (시안 맞춤형)
+   ============================================================ */
+
+/* 1. 메인 카드 상자 */
+.recipe-result-card {
+  width: 100%;
+  background-color: #f9fafb;
+  border-radius: 28px;
+  padding: 24px; /* 상자 내부 여백 */
+  margin-top: 20px;
+}
+/* 2. 좌우 분할 컨테이너 */
+.card-content-wrapper {
+  display: flex;
+  gap: 32px;
+  align-items: stretch; /* 좌우 높이 맞춤 */
+}
+
+/* 3. 왼쪽: 사진 및 텍스트 오버레이 */
+.recipe-visual-aside {
+  flex: 1;
+  position: relative;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: var(--gray-200);
+}
+
+.recipe-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: #fff;
+}
+
+.recipe-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.recipe-kcal {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* 4. 오른쪽: 재료 그리드 및 버튼 */
+.mini-ingredient-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* 3열 */
+  gap: 10px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 5. 재료 그리드 (3x2 행렬 강제) */
+.mini-ingredient-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* 상자 내부용 재료 박스 크기 */
+.mini-ingredient-grid .ingredient-box {
+  width: 100% !important;
+  /* 🔥 정사각형을 만드는 핵심: 높이를 가로와 동일하게 */
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  background-color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-ingredient-grid .ingredient-box img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+}
+
+.mini-ingredient-grid .ingredient-box span {
+  font-size: 14px;
+  color: var(--font);
+}
+
+/* 6. 하단 버튼 영역 (상자 안쪽 우측 하단) */
+.card-action-area {
+  margin-top: 16px;
+}
+
+.btn-play-recipe {
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.btn-play-recipe:hover {
+  background-color: #003a8c;
+}
+
+.play-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.today-recommend {
+  margin-top: 60px;
+  padding-bottom: 40px;
+}
+
+.card-thumbnail {
+  width: 100%;
+  height: 100%;
+  max-height: 240px;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative; /* 🔥 자식 요소인 글자의 기준점이 됨 */
+  background-color: var(--gray-100);
+}
+
+.card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 이미지가 그림자(box-shadow)를 가리지 않도록 뒤로 보냅니다 */
+  display: block;
+}
+/* 2. 🔥 그림자만 담당하는 레이어를 이미지 위에 씌웁니다 */
+.card-thumbnail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* 여기에 제공해주신 그림자 코드를 넣습니다 */
+  /* inset 대신 일반 shadow처럼 작동하도록 보정하거나, 
+     배경색 그라데이션을 주는 것이 이미지 위에서는 더 확실합니다. */
+  box-shadow: inset 0px -102.308px 65.9615px rgba(0, 0, 0, 0.75);
+
+  pointer-events: none; /* 클릭 방해 금지 */
+  z-index: 1; /* 이미지보다 위 */
+}
+
+/* 🔥 그림자 위에 겹쳐질 텍스트 정보창 */
+.card-overlay-info {
+  position: absolute;
+  bottom: 20px; /* 아래에서 20px 띄움 */
+  left: 20px; /* 왼쪽에서 20px 띄움 */
+  right: 20px; /* 오른쪽에서 20px 띄움 */
+
+  display: flex;
+  justify-content: space-between; /* 이름은 왼쪽, 칼로리는 오른쪽 배치 */
+  align-items: flex-end;
+
+  color: #ffffff; /* 그림자가 어두우므로 글자는 흰색 */
+  z-index: 2;
+}
+
+.menu-name {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+}
+
+.menu-kcal {
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  opacity: 0.9; /* 칼로리는 살짝 투명하게 처리 가능 */
+}
+/* 그리드 레이아웃 (공통 토큰 card-container 활용 보완) */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: var(--spacing-18);
+}
+.card-section {
+  padding-bottom: 20px;
+}
+@media screen and (min-width: 1024px) {
+  .btn-play-recipe {
+    width: 184%;
+  }
+}

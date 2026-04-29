@@ -1,0 +1,207 @@
+@media screen and (max-width: 1023px) {
+  .desktop-sidebar {
+    display: none;
+  }
+  .inner-content {
+    padding: 24px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: var(--gray-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  /* 1. 레이아웃: 사이드바와 본문이 한 줄에 들어오도록 너비를 재조정 */
+  .layout {
+    display: flex !important;
+    flex-direction: row !important; /* 가로 배치 강제 */
+    width: 1024px !important;
+    height: 768px !important;
+    background-color: var(--gray-100) !important;
+    padding: 40px !important; /* 패딩을 조금 줄여 여유 공간 확보 */
+    gap: 20px !important; /* 사이드바와 본문 사이 간격 미세 조정 */
+    border-radius: 32px;
+    overflow: hidden;
+    margin: 0 auto !important; /* 중앙 고정 */
+  }
+
+  .mobile-header,
+  .bottom-nav {
+    display: none;
+  }
+
+  /* 2. 사이드바: 고정 너비를 주되 밀려나지 않게 설정 */
+  .desktop-sidebar {
+    width: 220px !important; /* 240px에서 220px로 줄여 본문 공간 확보 */
+    flex-shrink: 0 !important; /* 본문이 커져도 사이드바가 찌그러지지 않음 */
+  }
+
+  /* 3. 본문 래퍼: 남은 가로 공간을 꽉 채우도록 설정 */
+  .main-wrapper {
+    flex: 1 !important;
+    display: flex !important;
+    min-width: 0; /* 자식 요소(달력)가 부모를 뚫고 나가는 현상 방지 */
+    height: 100%;
+  }
+
+  /* 4. 흰색 본문 카드: 사이드바 바로 옆에 붙는 실제 도화지 */
+  .recommend-main-content {
+    flex: 1 !important;
+    width: 100% !important;
+    background-color: var(--gray-100) !important;
+    border-radius: 32px !important; /* 40px에서 32px로 조절 */
+    padding: 32px !important; /* 내부 패딩을 줄여 달력이 보일 공간 확보 */
+    overflow-y: auto;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* 5. 내부 콘텐츠: 달력 컨테이너 등이 100% 차도록 설정 */
+  .inner-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+}
+/* 프로필 카드 스타일 */
+.profile-card {
+  display: flex;
+  align-items: center;
+  background-color: #f9fafb;
+  padding: 24px;
+  border-radius: 24px;
+  margin-top: 24px;
+  gap: 20px;
+}
+
+.profile-visual {
+  width: 64px;
+  height: 64px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+}
+
+.profile-visual img {
+  width: 32px;
+  height: 32px;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 4px 0;
+  color: #1f2937;
+}
+.user-email {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.edit-profile-btn {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 메뉴 리스트 스타일 */
+.mypage-menu-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.menu-item:hover {
+  background-color: #f9fafb;
+  border-radius: 16px;
+}
+
+.menu-item-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.menu-item-left img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+}
+.menu-item-left span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.arrow {
+  color: #d1d5db;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* 마이페이지 하단 영역 */
+.mypage-footer {
+  margin-top: 40px;
+  padding: 0 4px; /* 양옆 여백 조절 */
+}
+
+/* 🔥 시안 스타일 로그아웃 버튼 */
+.logout-full-btn {
+  width: 100%;
+  height: 56px;
+  background-color: #f3f4f6; /* 시안의 연한 회색 배경 */
+  border: none;
+  border-radius: 16px; /* 둥근 모서리 */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.logout-full-btn span {
+  color: var(--error); /* 회색 글자색 */
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* 마우스 올렸을 때 효과 */
+.logout-full-btn:hover {
+  background-color: var(--error);
+}
+.logout-full-btn:hover span {
+  color: var(--gray-50); /* 회색 글자색 */
+  font-size: 16px;
+  font-weight: 600;
+}

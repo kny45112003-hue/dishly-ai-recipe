@@ -10,5 +10,267 @@
 
     <script src="js/mypage.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header class="mobile-header container">
+      <a href="#" class="logo">
+        <img src="assets/icon/log=icon.png" alt="Dishly 로고" />
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" type="button" aria-label="프로필">
+          <img src="assets/icon/human-icon.png" alt="프로필 로고" />
+        </button>
+        <button class="icon-btn" type="button" aria-label="메뉴">
+          <img src="assets/icon/menu.png" alt="메뉴 로고" />
+        </button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <div class="main-wrapper">
+        <aside class="desktop-sidebar">
+          <div class="desktop-sidebar-logo">
+            <img src="assets/icon/log=icon.png" alt="Dishly" />
+          </div>
+          <nav class="desktop-sidebar-menu">
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'index.html'"
+              data-default="assets/icon/home-icon-nomal.png"
+              data-hover="assets/icon/home-icon-chose.png"
+              data-active="assets/icon/home-icon-chose.png"
+            >
+              <img
+                src="assets/icon/home-icon-chose.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>메인</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'recommend.html'"
+              data-default="assets/icon/recipe-icon-nomal.png"
+              data-hover="assets/icon/recipe-icon-chose.png"
+              data-active="assets/icon/recipe-icon-chose.png"
+            >
+              <img
+                src="assets/icon/recipe-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>레시피 추천</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'refrigerator.html'"
+              data-default="assets/icon/stuff-icon-nomal.png"
+              data-hover="assets/icon/stuff-icon-chose.png"
+              data-active="assets/icon/stuff-icon-chose.png"
+            >
+              <img
+                src="assets/icon/stuff-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>나의 냉장고</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'recipe.html'"
+              data-default="assets/icon/save-icon-nomal.png"
+              data-hover="assets/icon/save-icon-chose.png"
+              data-active="assets/icon/save-icon-chose.png"
+            >
+              <img
+                src="assets/icon/save-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>레시피 기록</span>
+            </button>
+
+            <button
+              class="desktop-menu-item"
+              type="button"
+              onclick="location.href = 'record.html'"
+              data-default="assets/icon/record-icon-nomal.png"
+              data-hover="assets/icon/record-icon-chose.png"
+              data-active="assets/icon/record-icon-chose.png"
+            >
+              <img
+                src="assets/icon/record-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>식단 달력</span>
+            </button>
+
+            <button
+              class="desktop-menu-item is-active"
+              type="button"
+              onclick="location.href = 'mypage.html'"
+              data-default="assets/icon/mypage-icon-nomal.png"
+              data-hover="assets/icon/mypage-icon-chose.png"
+              data-active="assets/icon/mypage-icon-chose.png"
+            >
+              <img
+                src="assets/icon/mypage-icon-nomal.png"
+                alt=""
+                class="desktop-menu-icon"
+              />
+              <span>마이 페이지</span>
+            </button>
+          </nav>
+          <div class="desktop-sidebar-banner">
+            <img src="assets/image/Frame 122.png" alt="promo" />
+            <p>카메라로 재료를<br />간편하게 등록하세요!</p>
+            <button class="desktop-sidebar-banner-btn">+ 재료 추가하기</button>
+          </div>
+        </aside>
+        <main class="recommend-main-content">
+          <div class="inner-content">
+            <header class="content-header">
+              <h1 class="heading-2">마이 페이지</h1>
+            </header>
+
+            <section class="profile-card">
+              <div class="profile-visual">
+                <img src="assets/icon/human-icon.png" alt="프로필 사진" />
+              </div>
+              <div class="profile-info">
+                <h2 class="user-name">디슐리 님</h2>
+                <p class="user-email">dishly@example.com</p>
+              </div>
+              <button class="edit-profile-btn">수정</button>
+            </section>
+
+            <nav class="mypage-menu-list">
+              <button class="menu-item">
+                <div class="menu-item-left">
+                  <img src="assets/icon/recipe-icon-nomal.png" alt="" />
+                  <span>내가 만든 레시피</span>
+                </div>
+                <span class="arrow">&gt;</span>
+              </button>
+
+              <button class="menu-item">
+                <div class="menu-item-left">
+                  <img src="assets/icon/save-icon-nomal.png" alt="" />
+                  <span>저장한 레시피</span>
+                </div>
+                <span class="arrow">&gt;</span>
+              </button>
+
+              <button class="menu-item">
+                <div class="menu-item-left">
+                  <img src="assets/icon/record-icon-nomal.png" alt="" />
+                  <span>공지사항</span>
+                </div>
+                <span class="arrow">&gt;</span>
+              </button>
+
+              <button class="menu-item">
+                <div class="menu-item-left">
+                  <img src="assets/icon/stuff-icon-nomal.png" alt="" />
+                  <span>고객센터</span>
+                </div>
+                <span class="arrow">&gt;</span>
+              </button>
+            </nav>
+            <div class="mypage-footer">
+              <button class="logout-full-btn" type="button">
+                <span>로그아웃</span>
+              </button>
+            </div>
+          </div>
+          <footer class="site-footer">
+            <div class="container">
+              <p class="footer-logo">Dishly</p>
+              <p class="footer-text">
+                나만의 식단을 더 쉽게 관리하는 레시피 서비스
+              </p>
+              <p class="footer-copy">© 2026 Dishly. All rights reserved.</p>
+            </div>
+          </footer>
+        </main>
+      </div>
+
+      <nav class="bottom-nav">
+        <div class="bottom-nav-inner">
+          <button
+            class="bottom-nav-item"
+            onclick="location.href = 'index.html'"
+            data-default="assets/icon/home-icon-nomal.png"
+            data-hover="assets/icon/home-icon-chose.png"
+            data-active="assets/icon/home-icon-chose.png"
+          >
+            <img
+              src="assets/icon/home-icon-nomal.png"
+              class="bottom-nav-icon"
+            />
+            <span class="bottom-nav-text">홈</span>
+          </button>
+          <button
+            class="bottom-nav-item"
+            onclick="location.href = 'recommend.html'"
+            data-default="assets/icon/recipe-icon-nomal.png"
+            data-hover="assets/icon/recipe-icon-chose.png"
+            data-active="assets/icon/recipe-icon-chose.png"
+          >
+            <img
+              src="assets/icon/recipe-icon-nomal.png"
+              class="bottom-nav-icon"
+            />
+            <span class="bottom-nav-text">레시피</span>
+          </button>
+          <button
+            class="bottom-nav-item is-active"
+            onclick="location.href = 'refrigerator.html'"
+            data-default="assets/icon/stuff-icon-nomal.png"
+            data-hover="assets/icon/stuff-icon-chose.png"
+            data-active="assets/icon/stuff-icon-chose.png"
+          >
+            <img
+              src="assets/icon/stuff-icon-chose.png"
+              class="bottom-nav-icon"
+            />
+            <span class="bottom-nav-text">재료</span>
+          </button>
+          <button
+            class="bottom-nav-item"
+            onclick="location.href = 'recipe.html'"
+            data-default="assets/icon/save-icon-nomal.png"
+            data-hover="assets/icon/save-icon-chose.png"
+            data-active="assets/icon/save-icon-chose.png"
+          >
+            <img
+              src="assets/icon/save-icon-nomal.png"
+              class="bottom-nav-icon"
+            />
+            <span class="bottom-nav-text">저장</span>
+          </button>
+          <button
+            class="bottom-nav-item"
+            onclick="location.href = 'record.html'"
+            data-default="assets/icon/record-icon-nomal.png"
+            data-hover="assets/icon/record-icon-chose.png"
+            data-active="assets/icon/record-icon-chose.png"
+          >
+            <img
+              src="assets/icon/record-icon-nomal.png"
+              class="bottom-nav-icon"
+            />
+            <span class="bottom-nav-text">기록</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </body>
 </html>
