@@ -576,41 +576,6 @@
     border-color: var(--primary-lighten-bule-900);
   }
 }
-/* 푸터 */
-.site-footer {
-  margin-top: 48px;
-  padding: 32px 0 120px;
-  background: var(--gray-50);
-  border-top: 1px solid var(--gray-200);
-}
-
-.site-footer .container {
-  background: transparent;
-}
-
-.footer-logo {
-  margin-bottom: var(--spacing-8);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  color: var(--font);
-}
-
-.footer-text {
-  margin-bottom: 6px;
-  font-size: var(--font-size-sm);
-  line-height: 20px;
-  color: var(--gray-500);
-}
-
-.footer-copy {
-  font-size: var(--font-size-xs);
-  line-height: 18px;
-  color: var(--gray-400);
-}
-
-.tablet-inner {
-  width: 100%;
-}
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .tablet-inner {
