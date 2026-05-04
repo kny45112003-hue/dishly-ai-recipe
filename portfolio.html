@@ -1,0 +1,488 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>김나연 UX/UI Portfolio</title>
+    <style>
+      @page { size: 16in 9in; margin: 0; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif; color: #10213f; background: #eef5ff; }
+      .deck { width: 100%; }
+      .slide { position: relative; width: 16in; height: 9in; padding: 0.62in 0.76in; overflow: hidden; page-break-after: always; background: #f8fbff; display: flex; flex-direction: column; justify-content: space-between; }
+      .slide:nth-child(2n) { background: #ffffff; }
+      .topline { display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 15px; color: #5a6b89; font-weight: 700; }
+      .brand { display: inline-flex; align-items: center; gap: 12px; color: #005ee6; }
+      .brand img { height: 30px; width: auto; }
+      h1, h2, h3, p { margin: 0; letter-spacing: 0; }
+      h1 { font-size: 64px; line-height: 1.04; color: #071a35; }
+      .hero h1 { font-size: 56px; line-height: 1.12; }
+      h2 { font-size: 42px; line-height: 1.16; color: #071a35; }
+      h3 { font-size: 24px; line-height: 1.28; color: #10213f; }
+      p, li { font-size: 20px; line-height: 1.55; color: #41516c; }
+      ul { margin: 0; padding-left: 24px; }
+      li { margin: 8px 0; }
+      .hero { display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: 52px; flex: 1; }
+      .subtitle { margin-top: 26px; max-width: 650px; font-size: 24px; color: #41516c; }
+      .meta { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
+      .pill { padding: 9px 16px; border-radius: 999px; background: #e6f0ff; color: #005ee6; font-size: 16px; font-weight: 800; }
+      .project-info { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 28px; max-width: 640px; }
+      .project-info-item { border-radius: 8px; background: #fff; border: 1px solid #e4ecf6; padding: 16px 18px; box-shadow: 0 12px 28px rgba(16, 33, 63, 0.05); }
+      .project-info-item strong { display: block; margin-bottom: 6px; color: #005ee6; font-size: 15px; }
+      .project-info-item span { color: #41516c; font-size: 16px; line-height: 1.35; font-weight: 800; }
+      .hamni-hero .project-info-item { border-color: #ead7b8; box-shadow: 0 12px 28px rgba(120, 78, 20, 0.07); }
+      .hamni-hero .project-info-item strong { color: #bd7a16; }
+      .hero-art { position: relative; min-height: 570px; display: grid; place-items: center; }
+      .hero-food { width: 530px; height: 420px; object-fit: contain; filter: drop-shadow(0 34px 48px rgba(0, 73, 179, 0.16)); }
+      .phone { width: 300px; height: 610px; border-radius: 36px; background: #fff; box-shadow: 0 26px 56px rgba(13, 48, 94, 0.16); border: 10px solid #10213f; padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+      .phone-wide { width: 410px; height: 650px; }
+      .phone-head { display: flex; justify-content: space-between; align-items: center; font-weight: 900; color: #005ee6; font-size: 18px; }
+      .phone-card { border-radius: 18px; background: #f3f7ff; padding: 16px; }
+      .phone-card.white { background: #fff; border: 1px solid #e6eef8; }
+      .food-img { width: 100%; height: 170px; object-fit: cover; border-radius: 18px; }
+      .mini-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+      .mini { height: 54px; border-radius: 14px; background: #eef4fb; display: grid; place-items: center; }
+      .mini img { width: 30px; height: 30px; object-fit: contain; }
+      .two-col { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 46px; align-items: center; flex: 1; }
+      .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .card { background: #fff; border: 1px solid #e4ecf6; border-radius: 8px; padding: 24px; box-shadow: 0 16px 38px rgba(16, 33, 63, 0.06); }
+      .card strong { display: block; margin-bottom: 8px; color: #005ee6; font-size: 18px; }
+      .card p { font-size: 18px; line-height: 1.45; }
+      .statement { background: #10213f; color: #fff; border-radius: 8px; padding: 34px; }
+      .statement p, .statement h3 { color: #fff; }
+      .statement p { opacity: 0.78; margin-top: 12px; }
+      .process { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 40px; }
+      .step { background: #fff; border-radius: 8px; padding: 22px 18px; border-top: 5px solid #4d96ff; min-height: 175px; }
+      .step .num { font-size: 15px; color: #005ee6; font-weight: 900; margin-bottom: 14px; }
+      .step p { font-size: 17px; line-height: 1.45; margin-top: 8px; }
+      .flow-map { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 34px; align-items: stretch; }
+      .flow-node { position: relative; background: #fff; border: 1px solid #e4ecf6; border-radius: 8px; padding: 24px 18px; min-height: 210px; box-shadow: 0 16px 38px rgba(16, 33, 63, 0.06); }
+      .flow-node:not(:last-child)::after { content: ""; position: absolute; top: 50%; right: -11px; width: 20px; height: 20px; border-top: 3px solid #4d96ff; border-right: 3px solid #4d96ff; transform: translateY(-50%) rotate(45deg); background: transparent; z-index: 2; }
+      .flow-index { width: 34px; height: 34px; border-radius: 50%; background: #005ee6; color: #fff; display: grid; place-items: center; font-size: 15px; font-weight: 900; margin-bottom: 18px; }
+      .flow-node h3 { min-height: 62px; }
+      .flow-node p { font-size: 17px; line-height: 1.45; margin-top: 10px; }
+      .flow-caption { margin-top: 28px; padding: 20px 24px; border-radius: 8px; background: #e6f0ff; color: #10213f; font-size: 19px; line-height: 1.5; }
+      .concept { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 34px; }
+      .concept .card { min-height: 230px; }
+      .swatches { display: flex; gap: 12px; margin-top: 22px; }
+      .swatch { width: 58px; height: 58px; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 8px 20px rgba(16, 33, 63, 0.12); }
+      .screen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; flex: 1; margin-top: 26px; }
+      .screen { background: #fff; border-radius: 8px; border: 1px solid #e4ecf6; overflow: hidden; box-shadow: 0 18px 42px rgba(16, 33, 63, 0.08); display: flex; flex-direction: column; }
+      .screen-img { height: 210px; background: #eef5ff; display: grid; place-items: center; overflow: hidden; }
+      .screen-img img { width: 100%; height: 100%; object-fit: cover; }
+      .screen-body { padding: 20px; }
+      .screen-body p { font-size: 17px; line-height: 1.45; margin-top: 8px; }
+      .mock-dashboard { background: #fff; border-radius: 8px; padding: 26px; box-shadow: 0 22px 50px rgba(16, 33, 63, 0.11); display: grid; grid-template-columns: 190px 1fr 250px; gap: 22px; min-height: 560px; }
+      .sidebar { background: #f3f7ff; border-radius: 24px; padding: 26px 18px; }
+      .nav-item { display: flex; gap: 10px; align-items: center; margin: 22px 0; color: #41516c; font-size: 15px; font-weight: 800; }
+      .nav-item img { width: 18px; }
+      .dash-main { display: flex; flex-direction: column; gap: 18px; }
+      .banner { background: #e6f0ff; border-radius: 8px; padding: 24px; display: grid; grid-template-columns: 1fr 190px; align-items: center; min-height: 150px; }
+      .banner img { width: 185px; justify-self: end; }
+      .recipe-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .recipe-tile { height: 155px; border-radius: 8px; overflow: hidden; position: relative; background: #ddd; }
+      .recipe-tile img { width: 100%; height: 100%; object-fit: cover; }
+      .tile-label { position: absolute; left: 10px; bottom: 10px; right: 10px; color: #fff; font-weight: 900; font-size: 15px; text-shadow: 0 2px 8px rgba(0,0,0,.35); }
+      .right-panel { display: flex; flex-direction: column; gap: 16px; }
+      .chart { height: 190px; border-radius: 8px; background: conic-gradient(#4d96ff 0 62%, #b3d2ff 62% 78%, #e6f0ff 78% 100%); display: grid; place-items: center; }
+      .chart span { width: 110px; height: 110px; border-radius: 50%; background: #fff; display: grid; place-items: center; font-weight: 900; color: #005ee6; }
+      .footer-note { display: flex; justify-content: space-between; align-items: end; color: #70809a; font-size: 14px; }
+      .big-number { font-size: 68px; color: #005ee6; font-weight: 900; line-height: 1; }
+      .impact { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 38px; }
+      .impact .card { min-height: 190px; }
+      .hamni-impact .card strong, .hamni-impact .big-number { color: #bd7a16; }
+      .roadmap { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 32px; }
+      .roadmap li { font-size: 19px; }
+      .small { font-size: 16px; color: #70809a; }
+      .project-label { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 999px; background: #fff3d9; color: #bd7a16; font-size: 16px; font-weight: 900; margin-bottom: 24px; }
+      .hamni-hero { display: grid; grid-template-columns: 0.88fr 1.12fr; gap: 42px; align-items: center; flex: 1; }
+      .hamni-shot { width: 100%; border-radius: 8px; box-shadow: 0 24px 54px rgba(120, 78, 20, 0.18); border: 1px solid #ead7b8; }
+      .hamni-flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 34px; }
+      .hamni-flow .flow-node { border-top: 5px solid #c8913d; }
+      .hamni-flow .flow-index { background: #c8913d; }
+      .hamni-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 30px; }
+      .hamni-points .card strong { color: #bd7a16; }
+      .hamni-concept { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 34px; }
+      .hamni-token { background: #fff; border: 1px solid #ead7b8; border-radius: 8px; padding: 24px; box-shadow: 0 16px 38px rgba(120, 78, 20, 0.08); }
+      .hamni-token strong { color: #bd7a16; display: block; margin-bottom: 12px; font-size: 18px; }
+      .hamni-swatches { display: flex; gap: 12px; margin-top: 18px; }
+      .hamni-swatch { width: 58px; height: 58px; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 8px 20px rgba(60, 45, 26, 0.16); }
+      .hamni-type-list { display: grid; gap: 10px; margin-top: 14px; }
+      .hamni-type-list span { font-size: 18px; color: #3c2d1a; font-weight: 800; }
+      .toc-board { display: grid; grid-template-columns: 0.86fr 1.18fr 1.18fr; gap: 18px; margin-top: 32px; align-items: stretch; }
+      .toc-card { background: #fff; border: 1px solid #e4ecf6; border-radius: 8px; padding: 24px; box-shadow: 0 14px 34px rgba(16, 33, 63, 0.06); }
+      .toc-card.profile { background: #10213f; border-color: #10213f; color: #fff; }
+      .toc-card.profile .toc-title, .toc-card.profile .toc-desc, .toc-card.profile .toc-num { color: #fff; }
+      .toc-card.hamni { border-color: #ead7b8; }
+      .toc-num { display: inline-flex; align-items: center; justify-content: center; min-width: 58px; height: 34px; padding: 0 12px; border-radius: 999px; background: #e6f0ff; color: #005ee6; font-size: 17px; font-weight: 900; line-height: 1; }
+      .toc-card.hamni .toc-num { background: #fff3d9; color: #bd7a16; }
+      .toc-title { margin-top: 18px; color: #10213f; font-size: 25px; font-weight: 900; line-height: 1.2; }
+      .toc-desc { margin-top: 8px; color: #70809a; font-size: 16px; line-height: 1.4; }
+      .toc-list { display: grid; gap: 9px; margin-top: 20px; padding: 0; list-style: none; }
+      .toc-list li { display: grid; grid-template-columns: 46px 1fr; gap: 10px; margin: 0; font-size: 16px; line-height: 1.32; color: #41516c; }
+      .toc-list span { color: #005ee6; font-weight: 900; }
+      .toc-card.hamni .toc-list span { color: #bd7a16; }
+      .toc-summary { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .toc-summary-item { padding: 18px 20px; border-radius: 8px; background: #eef5ff; }
+      .toc-summary-item strong { display: block; color: #10213f; font-size: 18px; margin-bottom: 4px; }
+      .toc-summary-item p { font-size: 15px; line-height: 1.35; color: #70809a; }
+      .profile-layout { display: grid; grid-template-columns: 0.78fr 1.22fr; gap: 34px; align-items: stretch; flex: 1; margin-top: 30px; }
+      .profile-panel { background: #10213f; color: #fff; border-radius: 8px; padding: 34px; display: flex; flex-direction: column; justify-content: space-between; }
+      .profile-panel h3, .profile-panel p { color: #fff; }
+      .profile-panel p { opacity: 0.78; }
+      .profile-name { font-size: 46px; font-weight: 900; line-height: 1.12; margin-top: 18px; }
+      .profile-role { margin-top: 12px; font-size: 20px; color: #b3d2ff; font-weight: 800; }
+      .contact-list { display: grid; gap: 10px; margin-top: 26px; }
+      .contact-item { font-size: 17px; color: #dbeafe; }
+      .timeline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+      .timeline-card { background: #fff; border: 1px solid #e4ecf6; border-radius: 8px; padding: 26px; box-shadow: 0 16px 38px rgba(16, 33, 63, 0.06); }
+      .timeline-list { display: grid; gap: 16px; margin-top: 18px; }
+      .timeline-item { display: grid; grid-template-columns: 118px 1fr; gap: 14px; align-items: start; }
+      .timeline-date { color: #005ee6; font-size: 15px; font-weight: 900; line-height: 1.35; }
+      .timeline-text { color: #41516c; font-size: 17px; line-height: 1.45; }
+      @media print { body { background: #fff; } .slide { break-after: page; } }
+    </style>
+  </head>
+  <body>
+    <main class="deck">
+      <section class="slide">
+        <div class="topline"><div class="brand"><img src="assets/icon/log=icon.png" alt="Dishly" />김나연 UX/UI Portfolio</div><span>Dishly Case Study</span></div>
+        <div class="hero">
+          <div>
+            <h1>문제를 끝까지<br />해결하려는<br />UX/UI 디자이너<br />김나연입니다</h1>
+            <p class="subtitle">사용자의 불편을 발견하고, 화면 흐름과 인터랙션으로 끝까지 풀어내는 과정을 담은 포트폴리오입니다.</p>
+            <div class="meta"><span class="pill">UX/UI Design</span><span class="pill">Problem Solving</span><span class="pill">Frontend Publishing</span><span class="pill">Dishly Case Study</span></div>
+            <div class="project-info">
+              <div class="project-info-item"><strong>작업 기간</strong><span>2026. 01 - 2026. 04</span></div>
+              <div class="project-info-item"><strong>작업 툴</strong><span>Figma · HTML · CSS · JavaScript · VS Code</span></div>
+            </div>
+          </div>
+          <div class="hero-art"><img class="hero-food" src="assets/image/eating-hunam.png" alt="Dishly 메인 비주얼" /></div>
+        </div>
+        <div class="footer-note"><span>김나연 Portfolio</span><span>Dishly AI Diet Recipe Service</span></div>
+      </section>
+      <section class="slide">
+        <div class="topline"><div class="brand">01 Contents</div><span>목차</span></div>
+        <div>
+          <h2>Portfolio Contents</h2>
+          <p class="subtitle">개인 소개 다음, 두 개의 프로젝트를 같은 기준으로 비교하며 볼 수 있도록 구성했습니다.</p>
+          <div class="toc-board">
+            <article class="toc-card profile">
+              <span class="toc-num">02</span>
+              <div class="toc-title">Profile</div>
+              <p class="toc-desc">김나연을 먼저 소개합니다.</p>
+              <ul class="toc-list">
+                <li><span>02</span>자기소개</li>
+                <li><span>02</span>학력 및 경력사항</li>
+              </ul>
+            </article>
+            <article class="toc-card">
+              <span class="toc-num">03-12</span>
+              <div class="toc-title">Project 01<br />Dishly</div>
+              <p class="toc-desc">AI 다이어트 레시피 추천 서비스</p>
+              <ul class="toc-list">
+                <li><span>03</span>문제 정의</li>
+                <li><span>04</span>페르소나</li>
+                <li><span>05</span>디자인 컨셉</li>
+                <li><span>06</span>정보 구조</li>
+                <li><span>07</span>유저 플로우</li>
+                <li><span>08-10</span>화면 소개</li>
+                <li><span>11-12</span>기대 효과와 개선 방향</li>
+              </ul>
+            </article>
+            <article class="toc-card hamni">
+              <span class="toc-num">13-18</span>
+              <div class="toc-title">Project 02<br />Hamniverse</div>
+              <p class="toc-desc">햄스터 관리 애플리케이션</p>
+              <ul class="toc-list">
+                <li><span>13</span>프로젝트 개요</li>
+                <li><span>14</span>문제 정의</li>
+                <li><span>15</span>디자인 컨셉</li>
+                <li><span>16</span>유저 플로우</li>
+                <li><span>17</span>화면 소개</li>
+                <li><span>18</span>기대 효과</li>
+              </ul>
+            </article>
+            <div class="toc-summary">
+              <div class="toc-summary-item"><strong>Problem</strong><p>사용자 불편을 먼저 정의합니다.</p></div>
+              <div class="toc-summary-item"><strong>Flow</strong><p>목적 달성까지의 이동 흐름을 보여줍니다.</p></div>
+              <div class="toc-summary-item"><strong>Screen</strong><p>실제 UI 화면과 개선 방향을 정리합니다.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Contents</span><span>Profile · Case Study · Next Step</span></div>
+      </section>
+      <section class="slide">
+        <div class="topline"><div class="brand">02 Profile</div><span>자기소개 · 학력 및 경력사항</span></div>
+        <div>
+          <h2>문제를 끝까지 해결하려는 UX/UI 디자이너</h2>
+          <p class="subtitle">아래 내용은 수정용 더미 데이터입니다. 연락처, 학력, 경력 문구는 실제 정보로 교체하면 됩니다.</p>
+          <div class="profile-layout">
+            <aside class="profile-panel">
+              <div>
+                <p>UI/UX Designer · Frontend Developer</p>
+                <div class="profile-name">김나연</div>
+                <div class="profile-role">문제를 끝까지 관찰하고, 사용자가 목적을 달성하는 흐름으로 정리하는 UX/UI 디자이너</div>
+              </div>
+              <div class="contact-list">
+                <div class="contact-item">Email · nayeon@example.com</div>
+                <div class="contact-item">Phone · 010-0000-0000</div>
+                <div class="contact-item">Portfolio · example.com/portfolio</div>
+              </div>
+            </aside>
+            <div class="timeline-grid">
+              <article class="timeline-card">
+                <strong>Education</strong>
+                <div class="timeline-list">
+                  <div class="timeline-item"><span class="timeline-date">2026.03<br />- 2028.02</span><span class="timeline-text">OO대학교 시각디자인학과 졸업 예정</span></div>
+                  <div class="timeline-item"><span class="timeline-date">2024.03<br />- 2026.02</span><span class="timeline-text">OO전문대학 디지털미디어디자인 전공</span></div>
+                  <div class="timeline-item"><span class="timeline-date">2023.03<br />- 2024.02</span><span class="timeline-text">OO고등학교 졸업</span></div>
+                </div>
+              </article>
+              <article class="timeline-card">
+                <strong>Experience</strong>
+                <div class="timeline-list">
+                  <div class="timeline-item"><span class="timeline-date">2026.01<br />- 2026.04</span><span class="timeline-text">Dishly UI/UX 포트폴리오 프로젝트 기획 및 화면 구현</span></div>
+                  <div class="timeline-item"><span class="timeline-date">2025.09<br />- 2025.12</span><span class="timeline-text">프론트엔드 스터디 참여, 반응형 웹 제작</span></div>
+                  <div class="timeline-item"><span class="timeline-date">2025.03<br />- 2025.05</span><span class="timeline-text">Figma 기반 모바일 앱 프로토타입 제작 실습</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Profile</span><span>더미 데이터는 자유롭게 수정 가능</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">03 Problem</div><span>문제 정의</span></div>
+        <div class="two-col">
+          <div class="statement"><h2>식단 관리는 메뉴 선택에서 가장 자주 막힙니다.</h2><p>사용자는 냉장고 재료, 목표 칼로리, 조리 시간, 오늘의 섭취량을 동시에 고려해야 합니다. 정보는 많지만 내 상황에 맞는 한 끼로 연결되기 어렵습니다.</p></div>
+          <div class="cards">
+            <div class="card"><strong>재료 활용 실패</strong><p>보유 재료를 기억하지 못해 중복 구매하거나 유통기한을 놓칩니다.</p></div>
+            <div class="card"><strong>검색 피로</strong><p>레시피는 많지만 칼로리와 재료 조건을 함께 만족하는 결과를 찾기 어렵습니다.</p></div>
+            <div class="card"><strong>기록 단절</strong><p>추천받은 메뉴가 실제 식단 기록과 연결되지 않아 관리 흐름이 끊깁니다.</p></div>
+            <div class="card"><strong>입력 부담</strong><p>식단 앱은 꾸준히 입력해야 해서 시작은 쉽지만 유지가 어렵습니다.</p></div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Insight</span><span>추천과 기록을 하나의 루프로 설계</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">04 Persona</div><span>페르소나</span></div>
+        <div class="two-col">
+          <div class="statement"><h2>“냉장고에 있는 걸로 가볍게 먹고 싶은데, 매번 메뉴 고르는 게 제일 어려워요.”</h2><p>식단 관리를 시작했지만 바쁜 일상 속에서 재료 확인, 레시피 검색, 칼로리 계산을 따로 하기 번거로운 사용자입니다.</p></div>
+          <div class="cards">
+            <div class="card"><strong>Persona</strong><p>김서연, 27세. 자취 중인 직장인. 퇴근 후 30분 안에 만들 수 있는 건강한 한 끼를 원합니다.</p></div>
+            <div class="card"><strong>Goal</strong><p>냉장고 재료를 버리지 않고, 목표 칼로리에 맞는 메뉴를 빠르게 결정하고 싶습니다.</p></div>
+            <div class="card"><strong>Pain Point</strong><p>재료는 있는데 어떤 음식을 만들지 모르고, 레시피 검색 결과가 너무 많아 선택이 피곤합니다.</p></div>
+            <div class="card"><strong>Need</strong><p>보유 재료, 조리 시간, 칼로리를 한 번에 반영한 추천과 식단 기록 연결이 필요합니다.</p></div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Persona</span><span>바쁜 1인 가구 · 식단 관리 · 재료 활용</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">05 Concept</div><span>디자인 컨셉</span></div>
+        <div>
+          <h2>Fresh, Simple, Smart, Personal</h2>
+          <p class="subtitle">식단 관리의 부담감은 줄이고, “지금 바로 만들 수 있는 한 끼”를 명확하게 보여주는 밝고 실용적인 인터페이스를 목표로 했습니다.</p>
+          <div class="concept">
+            <div class="card"><strong>Fresh</strong><h3>밝은 배경과 음식 이미지</h3><p>실제 음식 사진과 식재료 아이콘으로 건강하고 생생한 인상을 줍니다.</p></div>
+            <div class="card"><strong>Simple</strong><h3>빠른 선택 구조</h3><p>칩, 카드, 하단 탭 중심으로 모바일에서 한 손 조작이 쉽도록 구성했습니다.</p></div>
+            <div class="card"><strong>Smart</strong><h3>상태를 보여주는 데이터</h3><p>현재 칼로리, 남은 칼로리, 주간 기록을 그래프로 시각화합니다.</p></div>
+          </div>
+          <div class="swatches"><span class="swatch" style="background:#4d96ff"></span><span class="swatch" style="background:#e6f0ff"></span><span class="swatch" style="background:#6bcb77"></span><span class="swatch" style="background:#ff511c"></span><span class="swatch" style="background:#10213f"></span></div>
+        </div>
+        <div class="footer-note"><span>Design Direction</span><span>신뢰감 있는 블루 + 신선한 식재료 이미지</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">06 IA</div><span>정보 구조</span></div>
+        <div class="two-col">
+          <div>
+            <h2>추천과 기록이 끊기지 않는 서비스 구조</h2>
+            <p class="subtitle">각 화면은 독립된 기능이 아니라 사용자가 식단을 결정하고 실행한 뒤 다시 관리하는 순환 구조로 연결됩니다.</p>
+          </div>
+          <div class="cards">
+            <div class="card"><strong>홈</strong><p>현재 칼로리, 추천 레시피, 임박 재료, 취향 기반 추천</p></div>
+            <div class="card"><strong>레시피 추천</strong><p>재료 추가, 목표 칼로리, 조리 시간, 난이도 선택</p></div>
+            <div class="card"><strong>나의 냉장고</strong><p>냉장고 스캔과 직접 입력으로 재료 등록</p></div>
+            <div class="card"><strong>식단 기록</strong><p>캘린더, 일일 섭취량, 식사별 칼로리 기록</p></div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Navigation</span><span>모바일 하단 탭 · 데스크톱 사이드바</span></div>
+      </section>
+      <section class="slide">
+        <div class="topline"><div class="brand">07 User Flow</div><span>유저 플로우</span></div>
+        <div>
+          <h2>재료 등록에서 식단 기록까지 이어지는 핵심 흐름</h2>
+          <p class="subtitle">Dishly는 추천 화면 하나에서 끝나는 서비스가 아니라, 사용자가 오늘의 식단을 결정하고 다시 관리하도록 연결되는 순환 구조로 설계했습니다.</p>
+          <div class="flow-map">
+            <article class="flow-node"><div class="flow-index">1</div><h3>냉장고 재료 등록</h3><p>카메라 스캔 또는 직접 입력으로 현재 보유 재료를 등록합니다.</p></article>
+            <article class="flow-node"><div class="flow-index">2</div><h3>추천 조건 선택</h3><p>목표 칼로리, 조리 시간, 난이도를 칩 UI로 빠르게 선택합니다.</p></article>
+            <article class="flow-node"><div class="flow-index">3</div><h3>AI 레시피 추천</h3><p>보유 재료와 조건을 기준으로 오늘 만들 수 있는 메뉴를 제안합니다.</p></article>
+            <article class="flow-node"><div class="flow-index">4</div><h3>레시피 저장 및 확인</h3><p>마음에 드는 추천 결과를 저장하고 재료와 칼로리를 다시 확인합니다.</p></article>
+            <article class="flow-node"><div class="flow-index">5</div><h3>식단 기록 반영</h3><p>섭취한 메뉴를 기록해 현재 칼로리와 남은 목표량을 추적합니다.</p></article>
+          </div>
+          <p class="flow-caption">핵심 UX 포인트: 입력 부담을 줄이고, 추천 결과가 저장과 기록으로 이어지게 만들어 사용자의 반복 사용 이유를 만듭니다.</p>
+        </div>
+        <div class="footer-note"><span>User Flow</span><span>냉장고 → 추천 → 저장 → 기록</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">08 Screens</div><span>화면 소개 1</span></div>
+        <h2>핵심 화면은 “상태 확인, 추천 받기, 재료 등록”에 집중합니다.</h2>
+        <div class="screen-grid">
+          <article class="screen"><div class="screen-img"><img src="assets/image/eating-hunam.png" alt="홈 화면 비주얼" /></div><div class="screen-body"><h3>홈</h3><p>현재 섭취 칼로리와 남은 칼로리를 그래프로 보여주고 추천 레시피로 연결합니다.</p></div></article>
+          <article class="screen"><div class="screen-img"><img src="assets/image/totia.png" alt="레시피 추천" /></div><div class="screen-body"><h3>레시피 추천</h3><p>재료, 칼로리, 조리 시간, 난이도를 선택해 맞춤 레시피를 생성합니다.</p></div></article>
+          <article class="screen"><div class="screen-img"><img src="assets/image/refrigerator.png" alt="나의 냉장고" /></div><div class="screen-body"><h3>나의 냉장고</h3><p>카메라 스캔 또는 직접 입력으로 보유 재료를 빠르게 등록합니다.</p></div></article>
+        </div>
+        <div class="footer-note"><span>Primary Screens</span><span>Home · Recommend · Refrigerator</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">09 Screens</div><span>화면 소개 2</span></div>
+        <h2>추천 결과가 저장과 식단 기록으로 이어집니다.</h2>
+        <div class="screen-grid">
+          <article class="screen"><div class="screen-img"><img src="assets/image/rap.png" alt="레시피 기록" /></div><div class="screen-body"><h3>레시피 기록</h3><p>대표 이미지, 칼로리, 포함 재료를 함께 보여줘 다시 만들기 쉽게 정리합니다.</p></div></article>
+          <article class="screen"><div class="screen-img"><img src="assets/image/tomatoegg.png" alt="식단 기록" /></div><div class="screen-body"><h3>식단 기록</h3><p>월별 캘린더와 일일 섭취 칼로리로 식단 이력을 관리합니다.</p></div></article>
+          <article class="screen"><div class="screen-img"><img src="assets/icon/human-icon.png" alt="마이페이지" style="object-fit:contain;padding:52px" /></div><div class="screen-body"><h3>마이페이지</h3><p>사용자 정보, 만든 레시피, 저장 레시피, 공지와 고객센터 진입점을 제공합니다.</p></div></article>
+        </div>
+        <div class="footer-note"><span>Retention Screens</span><span>Recipe Record · Meal Record · My Page</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">10 UI Preview</div><span>데스크톱 화면 구성</span></div>
+        <div class="mock-dashboard">
+          <aside class="sidebar"><img src="assets/icon/log=icon.png" alt="Dishly" style="height:32px;margin-bottom:30px" /><div class="nav-item"><img src="assets/icon/home-icon-chose.png" alt="" />메인</div><div class="nav-item"><img src="assets/icon/recipe-icon-nomal.png" alt="" />레시피 추천</div><div class="nav-item"><img src="assets/icon/stuff-icon-nomal.png" alt="" />나의 냉장고</div><div class="nav-item"><img src="assets/icon/save-icon-nomal.png" alt="" />레시피 기록</div><div class="nav-item"><img src="assets/icon/record-icon-nomal.png" alt="" />식단 기록</div></aside>
+          <section class="dash-main"><div class="banner"><div><h3>당신만의 레시피를 만들어 보세요</h3><p style="font-size:17px;margin-top:8px">AI가 냉장고 재료와 목표 칼로리를 계산해 효율적인 식단을 제안합니다.</p></div><img src="assets/image/eating-hunam.png" alt="" /></div><h3>취향이 비슷한 사람들의 추천 레시피</h3><div class="recipe-row"><div class="recipe-tile"><img src="assets/image/totia.png" alt="" /><span class="tile-label">또띠아랩</span></div><div class="recipe-tile"><img src="assets/image/salad.png" alt="" /><span class="tile-label">치킨 샐러드</span></div><div class="recipe-tile"><img src="assets/image/pasta.png" alt="" /><span class="tile-label">샐러드 파스타</span></div></div></section>
+          <aside class="right-panel"><div class="card"><h3>일주일 기록</h3><p class="small">From 2026. 03. 30</p><div class="chart"><span>7 Days</span></div></div><div class="card"><strong>추천 생성 레시피</strong><p>저장과 기록으로 이어지는 개인화 추천 카드</p></div></aside>
+        </div>
+        <div class="footer-note"><span>Responsive</span><span>모바일은 하단 탭, 데스크톱은 3단 대시보드</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">11 Value</div><span>기대 효과</span></div>
+        <div>
+          <h2>사용자의 식단 결정과 실행 사이의 거리를 줄입니다.</h2>
+          <div class="impact">
+            <div class="card"><div class="big-number">01</div><h3>시간 절약</h3><p>오늘 가능한 메뉴를 빠르게 좁혀 선택 피로를 줄입니다.</p></div>
+            <div class="card"><div class="big-number">02</div><h3>재료 낭비 감소</h3><p>보유 재료 기반 추천으로 남은 식재료를 활용합니다.</p></div>
+            <div class="card"><div class="big-number">03</div><h3>목표 추적</h3><p>칼로리 그래프와 기록으로 현재 상태를 파악합니다.</p></div>
+            <div class="card"><div class="big-number">04</div><h3>재방문 동기</h3><p>추천, 저장, 기록이 연결되어 사용 루프를 만듭니다.</p></div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Outcome</span><span>Decision Support · Habit Formation</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">12 Next</div><span>개선 방향</span></div>
+        <div class="two-col">
+          <div><h2>프로토타입에서 실제 서비스로 확장하기</h2><p class="subtitle">현재 구현된 UI 흐름을 기반으로 데이터, AI 추천, 사용자 개인화 기능을 단계적으로 강화합니다.</p></div>
+          <div class="roadmap"><div class="card"><strong>Data</strong><ul><li>영양 데이터베이스 연동</li><li>식재료 유통기한 자동 계산</li><li>주간 리포트와 식단 인사이트</li></ul></div><div class="card"><strong>AI</strong><ul><li>보유 재료 기반 레시피 생성</li><li>알레르기와 선호도 반영</li><li>운동량 기반 목표 칼로리 보정</li></ul></div><div class="card"><strong>UX</strong><ul><li>레시피 상세 조리 단계</li><li>장보기 목록 자동 생성</li><li>추천 결과 저장/비교 강화</li></ul></div><div class="card"><strong>Vision</strong><ul><li>건강한 한 끼를 가장 쉽게 결정하는 개인 식단 파트너</li></ul></div></div>
+        </div>
+        <div class="footer-note"><span>Project 01 · Dishly</span><span>Next Project: Hamniverse</span></div>
+      </section>
+      <section class="slide">
+        <div class="topline"><div class="brand">13 Project 02</div><span>Hamniverse</span></div>
+        <div class="hamni-hero">
+          <div>
+            <div class="project-label">Project 02 · Hamniverse</div>
+            <h2>한 손의 작은 세상, 햄스터 관리 애플리케이션</h2>
+            <p class="subtitle">햄니버스는 햄스터의 일상 케어, 상태 확인, 햄터뷰, 인테리어, 쇼핑 경험을 하나의 모바일 앱 안에서 관리하도록 설계한 반려 햄스터 서비스입니다.</p>
+            <div class="project-info">
+              <div class="project-info-item"><strong>작업 기간</strong><span>2026. 04</span></div>
+              <div class="project-info-item"><strong>작업 툴</strong><span>Figma · Photoshop · Illustrator</span></div>
+            </div>
+            <div class="hamni-points">
+              <div class="card"><strong>Care</strong><p>먹이, 물, 청소 등 반복 케어를 체크합니다.</p></div>
+              <div class="card"><strong>Emotion</strong><p>햄스터와 대화하는 듯한 인터랙션으로 애착을 강화합니다.</p></div>
+              <div class="card"><strong>Commerce</strong><p>인테리어와 쇼핑을 연결해 필요한 물품을 탐색합니다.</p></div>
+            </div>
+          </div>
+          <img class="hamni-shot" src="assets/image/hamniverse-overview.png" alt="햄니버스 전체 화면" />
+        </div>
+        <div class="footer-note"><span>Hamniverse</span><span>Hamster Care · Interior · Shop</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">14 Problem</div><span>햄니버스 문제 정의</span></div>
+        <div class="two-col">
+          <div class="statement"><h2>햄스터 케어는 작고 반복적인 일을 매일 놓치지 않는 것이 중요합니다.</h2><p>초보 보호자는 먹이, 물, 청소, 환경 관리, 용품 구매 정보를 각각 따로 확인해야 합니다. 해야 할 일은 많지만 앱 안에서 한 번에 정리되는 경험은 부족합니다.</p></div>
+          <div class="cards">
+            <div class="card"><strong>반복 케어 누락</strong><p>먹이, 물, 청소 같은 매일의 관리 행동을 사용자가 기억에 의존합니다.</p></div>
+            <div class="card"><strong>상태 파악 어려움</strong><p>햄스터의 컨디션과 필요한 케어 정보를 직관적으로 확인하기 어렵습니다.</p></div>
+            <div class="card"><strong>환경 관리 분리</strong><p>케이지 인테리어와 용품 정보가 흩어져 있어 초보자가 선택하기 어렵습니다.</p></div>
+            <div class="card"><strong>재방문 동기 부족</strong><p>관리 앱이 단순 기록에 머물면 사용자가 매일 들어올 이유가 약해집니다.</p></div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Problem</span><span>작은 케어 행동을 매일 이어가게 만드는 구조</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">15 Concept</div><span>햄니버스 디자인 컨셉</span></div>
+        <div>
+          <h2>한 손의 작은 세상</h2>
+          <p class="subtitle">컨셉 보드의 브라운·베이지 계열, 둥근 버튼, 귀여운 캐릭터 톤을 바탕으로 반려 햄스터를 돌보는 따뜻하고 아기자기한 세계관을 만들었습니다.</p>
+          <div class="hamni-concept">
+            <div class="hamni-token"><strong>Color</strong><h3>따뜻한 베이지와 포인트 브라운</h3><p>폰트색은 짙은 브라운, 메인색은 골드 브라운과 크림, 서브색은 연한 베이지 톤으로 구성했습니다.</p><div class="hamni-swatches"><span class="hamni-swatch" style="background:#3c2d1a"></span><span class="hamni-swatch" style="background:#c99645"></span><span class="hamni-swatch" style="background:#fff4dc"></span><span class="hamni-swatch" style="background:#f3e5c8"></span></div></div>
+            <div class="hamni-token"><strong>Typography</strong><h3>귀여운 로고와 읽기 쉬운 본문</h3><p>로고는 둥글고 개성 있는 글꼴, 본문은 LINE Seed 계열의 고딕체, 버튼은 부드러운 동글체 톤으로 설정했습니다.</p><div class="hamni-type-list"><span>햄니버스에서 햄스터키우자</span><span style="font-weight:600">Hamniverse care service</span><span style="font-weight:900">낭만있구미체 버튼 톤</span></div></div>
+            <div class="hamni-token"><strong>Interaction</strong><h3>체크와 대화 중심의 관리</h3><p>메인 체크, 햄터뷰, 인테리어, 쇼핑으로 이어지는 흐름을 단순한 관리가 아닌 애착 경험으로 설계했습니다.</p></div>
+            <div class="hamni-token"><strong>Visual Mood</strong><h3>작은 케이지 안의 세계관</h3><p>햄스터, 케이지, 가구, 용품 이미지를 활용해 사용자가 앱 안에서 자신의 햄스터 공간을 꾸미는 느낌을 받게 합니다.</p></div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Design Concept</span><span>Brown · Beige · Cute · Daily Care</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">16 User Flow</div><span>햄니버스 유저 플로우</span></div>
+        <div>
+          <h2>햄스터의 상태를 확인하고 케어 행동으로 이어지는 흐름</h2>
+          <p class="subtitle">첨부된 워크플로우처럼 입장 후 로그인, 홈 화면, 햄쇼핑·햄터뷰·인테리어로 분기되는 구조를 앱 화면에 맞춰 정리했습니다.</p>
+          <div class="hamni-flow">
+            <article class="flow-node"><div class="flow-index">1</div><h3>앱 입장</h3><p>사용자가 햄니버스의 작은 세계에 진입합니다.</p></article>
+            <article class="flow-node"><div class="flow-index">2</div><h3>로그인</h3><p>계정으로 접속해 자신의 햄스터 관리 공간에 들어갑니다.</p></article>
+            <article class="flow-node"><div class="flow-index">3</div><h3>홈 화면</h3><p>햄스터 프로필과 하루 체크 항목을 먼저 확인합니다.</p></article>
+            <article class="flow-node"><div class="flow-index">4</div><h3>햄터뷰 · 인테리어</h3><p>대화형 정보 확인과 케이지 꾸미기 화면으로 이동합니다.</p></article>
+            <article class="flow-node"><div class="flow-index">5</div><h3>햄쇼핑</h3><p>추천 상품과 케어 용품을 확인해 필요한 행동으로 이어집니다.</p></article>
+          </div>
+          <p class="flow-caption">핵심 UX 포인트: 반려동물 관리의 반복적인 일을 귀엽고 감성적인 경험으로 바꿔, 사용자가 매일 앱에 들어올 이유를 만듭니다.</p>
+        </div>
+        <div class="footer-note"><span>User Flow</span><span>입장 → 로그인 → 홈화면 → 햄터뷰/인테리어/햄쇼핑</span></div>
+      </section>
+
+      <section class="slide">
+        <div class="topline"><div class="brand">17 Screens</div><span>햄니버스 화면 소개</span></div>
+        <h2>케어, 대화, 꾸미기, 쇼핑을 하나의 햄스터 세계로 연결합니다.</h2>
+        <div class="screen-grid">
+          <article class="screen"><div class="screen-img"><img src="assets/image/hamniverse-overview.png" alt="햄니버스 로그인과 메인" /></div><div class="screen-body"><h3>로그인 · 메인</h3><p>부드러운 베이지 톤과 햄스터 캐릭터로 첫 진입의 감성 경험을 만듭니다.</p></div></article>
+          <article class="screen"><div class="screen-img"><img src="assets/image/hamniverse-overview.png" alt="햄터뷰와 인테리어" /></div><div class="screen-body"><h3>햄터뷰 · 인테리어</h3><p>대화형 피드와 케이지 화면으로 케어 정보를 친근하게 전달합니다.</p></div></article>
+          <article class="screen"><div class="screen-img"><img src="assets/image/hamniverse-overview.png" alt="햄니버스 쇼핑" /></div><div class="screen-body"><h3>쇼핑</h3><p>사료, 영양제, 선택형 간식 등 햄스터 관리에 필요한 상품 탐색으로 확장합니다.</p></div></article>
+        </div>
+        <div class="footer-note"><span>Project 02</span><span>Hamniverse UI Case Study</span></div>
+      </section>
+      <section class="slide">
+        <div class="topline"><div class="brand">18 Value</div><span>햄니버스 기대 효과</span></div>
+        <div>
+          <h2>작은 케어 행동을 매일 이어가게 만듭니다.</h2>
+          <p class="subtitle">햄니버스는 반복 관리, 상태 확인, 감성적 상호작용, 용품 탐색을 하나의 흐름으로 묶어 초보 보호자의 부담을 줄입니다.</p>
+          <div class="impact hamni-impact">
+            <div class="card"><div class="big-number">01</div><h3>관리 누락 감소</h3><p>먹이, 물, 청소 같은 반복 케어를 한 화면에서 확인합니다.</p></div>
+            <div class="card"><div class="big-number">02</div><h3>상태 파악 강화</h3><p>프로필과 케어 흐름으로 햄스터의 컨디션을 쉽게 살핍니다.</p></div>
+            <div class="card"><div class="big-number">03</div><h3>재방문 동기</h3><p>햄터뷰와 캐릭터 인터랙션으로 매일 들어올 이유를 만듭니다.</p></div>
+            <div class="card"><div class="big-number">04</div><h3>탐색 연결</h3><p>인테리어와 쇼핑을 이어 케이지 환경 관리까지 확장합니다.</p></div>
+          </div>
+        </div>
+        <div class="footer-note"><span>Outcome</span><span>Care Routine · Emotional Engagement · Commerce Flow</span></div>
+      </section>
+    </main>
+  </body>
+</html>
+
+
+
+
+
+
+
+
