@@ -72,6 +72,27 @@
       .screen-img img { width: 100%; height: 100%; object-fit: cover; }
       .screen-body { padding: 20px; }
       .screen-body p { font-size: 17px; line-height: 1.45; margin-top: 8px; }
+      .screen-story { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 38px; align-items: center; flex: 1; margin-top: 20px; }
+      .screen-stack { display: grid; gap: 14px; align-content: center; }
+      .screen-shot { display: grid; grid-template-columns: 128px 1fr; gap: 18px; align-items: center; padding: 16px; border-radius: 8px; background: #fff; border: 1px solid #e4ecf6; box-shadow: 0 14px 32px rgba(16, 33, 63, 0.06); }
+      .screen-shot img { width: 128px; height: 112px; object-fit: cover; border-radius: 8px; background: #eef5ff; }
+      .screen-shot h3 { font-size: 21px; }
+      .screen-shot p { margin-top: 6px; font-size: 15px; line-height: 1.42; color: #5a6b89; }
+      .screen-notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-content: center; }
+      .screen-note { position: relative; padding: 22px 22px 22px 58px; border-radius: 8px; background: #fff; border: 1px solid #e4ecf6; box-shadow: 0 14px 32px rgba(16, 33, 63, 0.06); min-height: 142px; }
+      .screen-note::before { content: attr(data-num); position: absolute; left: 20px; top: 22px; width: 26px; height: 26px; border-radius: 50%; background: #005ee6; color: #fff; display: grid; place-items: center; font-size: 13px; font-weight: 900; }
+      .screen-note strong { display: block; color: #005ee6; font-size: 17px; margin-bottom: 8px; }
+      .screen-note p { font-size: 16px; line-height: 1.45; color: #41516c; }
+      .screen-preview { display: grid; grid-template-columns: 1fr 0.92fr; gap: 22px; align-items: stretch; flex: 1; margin-top: 20px; }
+      .phone-preview { background: #fff; border: 1px solid #e4ecf6; border-radius: 8px; padding: 24px; box-shadow: 0 18px 42px rgba(16, 33, 63, 0.08); display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 20px; align-items: center; }
+      .phone-preview img { width: 100%; height: 430px; object-fit: cover; border-radius: 8px; background: #eef5ff; }
+      .preview-copy { display: grid; gap: 16px; }
+      .preview-copy h3 { font-size: 28px; }
+      .preview-copy p { font-size: 18px; line-height: 1.48; }
+      .feature-list { display: grid; gap: 12px; }
+      .feature-item { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; }
+      .feature-item span { width: 34px; height: 34px; border-radius: 50%; background: #e6f0ff; color: #005ee6; display: grid; place-items: center; font-size: 15px; font-weight: 900; }
+      .feature-item p { font-size: 16px; line-height: 1.4; }
       .mock-dashboard { background: #fff; border-radius: 8px; padding: 26px; box-shadow: 0 22px 50px rgba(16, 33, 63, 0.11); display: grid; grid-template-columns: 190px 1fr 250px; gap: 22px; min-height: 560px; }
       .sidebar { background: #f3f7ff; border-radius: 24px; padding: 26px 18px; }
       .nav-item { display: flex; gap: 10px; align-items: center; margin: 22px 0; color: #41516c; font-size: 15px; font-weight: 800; }
@@ -331,22 +352,58 @@
 
       <section class="slide">
         <div class="topline"><div class="brand">08 Screens</div><span>화면 소개 1</span></div>
-        <h2>핵심 화면은 “상태 확인, 추천 받기, 재료 등록”에 집중합니다.</h2>
-        <div class="screen-grid">
-          <article class="screen"><div class="screen-img"><img src="assets/image/eating-hunam.png" alt="홈 화면 비주얼" /></div><div class="screen-body"><h3>홈</h3><p>현재 섭취 칼로리와 남은 칼로리를 그래프로 보여주고 추천 레시피로 연결합니다.</p></div></article>
-          <article class="screen"><div class="screen-img"><img src="assets/image/totia.png" alt="레시피 추천" /></div><div class="screen-body"><h3>레시피 추천</h3><p>재료, 칼로리, 조리 시간, 난이도를 선택해 맞춤 레시피를 생성합니다.</p></div></article>
-          <article class="screen"><div class="screen-img"><img src="assets/image/refrigerator.png" alt="나의 냉장고" /></div><div class="screen-body"><h3>나의 냉장고</h3><p>카메라 스캔 또는 직접 입력으로 보유 재료를 빠르게 등록합니다.</p></div></article>
+        <h2>홈, 추천레시피는 사용자의 현재 상태에서 바로 추천으로 이어지게 설계했습니다.</h2>
+        <div class="screen-story">
+          <div class="screen-stack">
+            <article class="screen-shot">
+              <img src="assets/image/eating-hunam.png" alt="홈 화면 비주얼" />
+              <div><h3>홈</h3><p>칼로리 상태와 추천 레시피를 첫 화면에서 함께 보여줘 오늘의 식단 결정을 빠르게 시작합니다.</p></div>
+            </article>
+            <article class="screen-shot">
+              <img src="assets/image/totia.png" alt="레시피 추천 화면" />
+              <div><h3>추천레시피</h3><p>재료, 목표 칼로리, 조리 시간, 난이도를 칩 UI로 선택해 입력 부담을 줄였습니다.</p></div>
+            </article>
+            <article class="screen-shot">
+              <img src="assets/image/refrigerator.png" alt="나의 냉장고 화면" />
+              <div><h3>나의 냉장고</h3><p>보유 재료를 스캔하거나 직접 입력해 추천 결과의 개인화 기준으로 연결합니다.</p></div>
+            </article>
+          </div>
+          <div class="screen-notes">
+            <article class="screen-note" data-num="1"><strong>상태를 먼저 인지</strong><p>현재 섭취량과 남은 칼로리를 시각화해 사용자가 자신의 식단 상태를 빠르게 파악하도록 했습니다.</p></article>
+            <article class="screen-note" data-num="2"><strong>선택 부담 최소화</strong><p>직접 입력보다 버튼과 칩을 중심으로 구성해 모바일에서도 조건 선택이 짧게 끝나도록 설계했습니다.</p></article>
+            <article class="screen-note" data-num="3"><strong>추천 근거 강화</strong><p>보유 재료와 목표 조건을 함께 반영해 “왜 이 메뉴가 추천됐는지” 이해할 수 있게 했습니다.</p></article>
+            <article class="screen-note" data-num="4"><strong>다음 행동 연결</strong><p>추천 화면에서 저장과 기록으로 이어지는 구조를 만들어 일회성 탐색에 그치지 않게 했습니다.</p></article>
+          </div>
         </div>
         <div class="footer-note"><span>Primary Screens</span><span>Home · Recommend · Refrigerator</span></div>
       </section>
 
       <section class="slide">
         <div class="topline"><div class="brand">09 Screens</div><span>화면 소개 2</span></div>
-        <h2>추천 결과가 저장과 식단 기록으로 이어집니다.</h2>
-        <div class="screen-grid">
-          <article class="screen"><div class="screen-img"><img src="assets/image/rap.png" alt="레시피 기록" /></div><div class="screen-body"><h3>레시피 기록</h3><p>대표 이미지, 칼로리, 포함 재료를 함께 보여줘 다시 만들기 쉽게 정리합니다.</p></div></article>
-          <article class="screen"><div class="screen-img"><img src="assets/image/tomatoegg.png" alt="식단 기록" /></div><div class="screen-body"><h3>식단 기록</h3><p>월별 캘린더와 일일 섭취 칼로리로 식단 이력을 관리합니다.</p></div></article>
-          <article class="screen"><div class="screen-img"><img src="assets/icon/human-icon.png" alt="마이페이지" style="object-fit:contain;padding:52px" /></div><div class="screen-body"><h3>마이페이지</h3><p>사용자 정보, 만든 레시피, 저장 레시피, 공지와 고객센터 진입점을 제공합니다.</p></div></article>
+        <h2>추천 이후에는 저장, 기록, 재방문으로 이어지는 사용 루프를 만들었습니다.</h2>
+        <div class="screen-preview">
+          <article class="phone-preview">
+            <img src="assets/image/rap.png" alt="레시피 기록 화면" />
+            <div class="preview-copy">
+              <h3>레시피 기록</h3>
+              <p>대표 이미지, 칼로리, 포함 재료를 함께 보여줘 사용자가 저장한 레시피를 다시 찾고 조리하기 쉽게 정리했습니다.</p>
+              <div class="feature-list">
+                <div class="feature-item"><span>01</span><p>음식 이미지와 칼로리를 먼저 보여줘 탐색 속도를 높였습니다.</p></div>
+                <div class="feature-item"><span>02</span><p>포함 재료를 노출해 냉장고 재료와 자연스럽게 비교할 수 있습니다.</p></div>
+              </div>
+            </div>
+          </article>
+          <article class="phone-preview">
+            <img src="assets/image/tomatoegg.png" alt="식단 기록 화면" />
+            <div class="preview-copy">
+              <h3>식단 기록</h3>
+              <p>월별 캘린더와 일일 칼로리 그래프로 식단 이력을 확인하게 해 추천 결과가 실제 관리 행동으로 이어지게 했습니다.</p>
+              <div class="feature-list">
+                <div class="feature-item"><span>03</span><p>기록 화면에서 섭취 흐름을 확인해 목표 달성 여부를 쉽게 판단합니다.</p></div>
+                <div class="feature-item"><span>04</span><p>반복 기록을 통해 다음 추천의 개인화 근거를 쌓을 수 있습니다.</p></div>
+              </div>
+            </div>
+          </article>
         </div>
         <div class="footer-note"><span>Retention Screens</span><span>Recipe Record · Meal Record · My Page</span></div>
       </section>
@@ -478,7 +535,6 @@
     </main>
   </body>
 </html>
-
 
 
 
